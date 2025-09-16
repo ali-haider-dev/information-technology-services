@@ -1,42 +1,37 @@
-"use client";
+"use client"
 
-import { useState,useEffect } from "react";
-import Link from "next/link";
-import { Menu, X } from "lucide-react"; // for hamburger icons
-import Image from "next/image";
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react" // for hamburger icons
+import Image from "next/image"
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   // Prevent body scroll when mobile menu is open
- useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = ""
     }
     return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
 
   return (
-    <header className="fixed top-0 mx-15 z-50 mt-10 bg-[#1c398e] w-[90vw] rounded-2xl">
-      <div className={`mx-auto h-16 flex max-w-7xl items-center justify-between px-6 py-4 ${isOpen ? 'hidden' : ''}`}>
+    <header className="fixed top-0  md:mx-16 z-50 mt-10 bg-white/20  w-[90vw] rounded-2xl">
+      <div className={`mx-auto h-16 flex max-w-7xl items-center justify-between px-6 py-4 ${isOpen ? "hidden" : ""}`}>
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <div className="rounded-lg flex items-center justify-center p-4">
-            <Image
-              src={"/its-logo.png"}
-              width={100}
-              height={80}
-              alt="ITS Logo"
-            />
+            <Image src={"/its-logo.png"} width={100} height={80} alt="ITS Logo" />
           </div>
         </Link>
 
         {/* Desktop Nav */}
-  <nav className="hidden md:flex items-center gap-8 text-white font-medium" role="navigation">
+        <nav className="hidden md:flex items-center gap-8 text-white font-medium" role="navigation">
           {["Services", "About", "Contact"].map((item) => (
             <Link
               key={item}
@@ -60,7 +55,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 text-white"
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -70,7 +65,7 @@ export default function Navbar() {
 
       {/* Mobile Menu (Slide-in) */}
       <div
-        className={`fixed top-0 right-0 h-full w-screen bg-white transform transition-transform duration-300 ease-in-out z-40 sm:w-64 ${
+        className={`fixed top-0 right-0  h-full w-screen bg-white/10 transform transition-transform duration-300 ease-in-out z-40 sm:w-64 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         role="navigation"
@@ -78,20 +73,12 @@ export default function Navbar() {
       >
         {/* Top bar with logo + close button */}
         <div className="flex items-center justify-between px-6 py-4 border-b">
-         <Link href="/" className="flex items-center gap-3">
-          <div className="rounded-lg flex items-center justify-center p-4 bg-[#1c398e]">
-            <Image
-              src={"/its-logo.png"}
-              width={100}
-              height={80}
-              alt="ITS Logo"
-            />
-          </div>
-        </Link>
-          <button
-            className="text-gray-600 hover:text-[#1c398e] transition"
-            onClick={() => setIsOpen(false)}
-          >
+          <Link href="/" className="flex items-center gap-3">
+            <div className="rounded-lg flex items-center justify-center p-4 bg-white/20">
+              <Image src={"/its-logo.png"} width={100} height={80} alt="ITS Logo" />
+            </div>
+          </Link>
+          <button className="text-white hover:text-white/10 transition" onClick={() => setIsOpen(false)}>
             <X size={30} />
           </button>
         </div>
@@ -106,7 +93,7 @@ export default function Navbar() {
               className="relative group transition duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <span className="hover:text-[#1c398e] transition hover:text-xl">{item}</span>
+              <span className=" text-white transition ">{item}</span>
               <span className="absolute left-0 bottom-[-16px] h-[2px] w-full bg-gray-200 group-hover:bg-[#1c398e] transition-all group-hover:w-full"></span>
             </Link>
           ))}
@@ -115,7 +102,7 @@ export default function Navbar() {
           <Link
             href="/client-portal"
             onClick={() => setIsOpen(false)}
-            className="rounded-full bg-[#1c398e] w-44 pl-2 py-3 text-white font-semibold shadow-md transition hover:bg-[#152a6b] hover:shadow-lg "
+            className="rounded-full bg-white/25 text-center w-44 pl-2 py-3 text-white font-semibold shadow-md transition hover:shadow-lg "
           >
             Client Portal
           </Link>
@@ -123,12 +110,7 @@ export default function Navbar() {
       </div>
 
       {/* Overlay (click to close) */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
+      {isOpen && <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30" onClick={() => setIsOpen(false)} />}
     </header>
-  );
+  )
 }
