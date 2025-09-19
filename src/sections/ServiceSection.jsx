@@ -1,6 +1,6 @@
 "use client";
-
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import Lottie from "lottie-react";
 import WorldBusiness from "../components/lotties/WorldBusiness.json";
 import {
@@ -11,14 +11,14 @@ import {
   FileCode,
   Search,
   Shield,
-  Image as ImageIcon,
+  Image,
   FileText,
 } from "lucide-react";
-import ServiceCard from "@/components/ServiceCard";
+import ServiceCard from "../components/ServiceCard";
 
 const services = [
   {
-    icon: <Globe className="w-6 h-6 text-white" />,
+    icon: <Globe className="w-5 h-5 text-white" />,
     title: "Management ERP Systems",
     description:
       "Proprietary enterprise resource planning platform designed specifically for international publishers.",
@@ -27,9 +27,10 @@ const services = [
       "AI-powered resource optimization",
       "Real-time analytics dashboard",
     ],
+    extraInfo: {turnaround:"Custom deployment", expertise:"Cloud-based SAAS platform" },
   },
   {
-    icon: <ShoppingCart className="w-6 h-6 text-white" />,
+    icon: <ShoppingCart className="w-5 h-5 text-white" />,
     title: "E-Commerce & Payment Gateways",
     description:
       "Proprietary payment processing platform with integrated e-commerce solutions for global publishers.",
@@ -38,9 +39,10 @@ const services = [
       "AI-powered fraud detection",
       "Smart compliance automation",
     ],
+    extraInfo:{turnaround:"Instant activation", expertise:"50+ payment methods" },
   },
   {
-    icon: <Lock className="w-6 h-6 text-white" />,
+    icon: <Lock className="w-5 h-5 text-white" />,
     title: "Content Delivery & Access Control",
     description:
       "Advanced proprietary CDN platform with intelligent access control systems for digital publishing.",
@@ -49,9 +51,10 @@ const services = [
       "Automated user access control",
       "Advanced DRM technology",
     ],
+    extraInfo:{turnaround:"Real-time deployment", expertise:"99.9% uptime guarantee" },
   },
   {
-    icon: <Edit3 className="w-6 h-6 text-white" />,
+    icon: <Edit3 className="w-5 h-5 text-white" />,
     title: "AI-Powered Copy Editing",
     description:
       "Proprietary AI-driven editing platform ensuring academic excellence through automated quality control.",
@@ -60,9 +63,11 @@ const services = [
       "Automated style guide compliance",
       "Smart academic tone analysis",
     ],
+    extraInfo:{turnaround:"24-48 hours", expertise:"AI-powered platform" },
+
   },
   {
-    icon: <FileCode className="w-6 h-6 text-white" />,
+    icon: <FileCode className="w-5 h-5 text-white" />,
     title: "Automated Typesetting & XML",
     description:
       "Proprietary automated typesetting engine with intelligent XML conversion for seamless publishing workflows.",
@@ -71,9 +76,11 @@ const services = [
       "Automated XML/HTML generation",
       "Smart format compatibility",
     ],
+    extraInfo:{turnaround:"1-2 days", expertise:"Proprietary AI engine" },
+
   },
   {
-    icon: <Search className="w-6 h-6 text-white" />,
+    icon: <Search className="w-5 h-5 text-white" />,
     title: "Automated Reference Verification",
     description:
       "Advanced AI-powered reference verification system with automated citation accuracy checking.",
@@ -82,9 +89,11 @@ const services = [
       "AI-powered source verification",
       "Smart bibliography formatting",
     ],
+    extraInfo:{turnaround:"12-24 hours", expertise:"Machine learning algorithms" },
+
   },
   {
-    icon: <Shield className="w-6 h-6 text-white" />,
+    icon: <Shield className="w-5 h-5 text-white" />,
     title: "Advanced AI Detection Platform",
     description:
       "Proprietary multi-layered AI detection system with advanced plagiarism and content originality analysis.",
@@ -93,9 +102,11 @@ const services = [
       "Machine learning content analysis",
       "Automated integrity reporting",
     ],
+    extraInfo:{turnaround:"Instant results", expertise:"Proprietary AI algorithms" },
+
   },
   {
-    icon: <ImageIcon className="w-6 h-6 text-white" />,
+    icon: <Image className="w-5 h-5 text-white" />,
     title: "AI-Enhanced Figure Processing",
     description:
       "Proprietary AI-powered figure enhancement platform with automated quality optimization and formatting.",
@@ -104,9 +115,11 @@ const services = [
       "Automated accuracy validation",
       "Smart publication formatting",
     ],
+    extraInfo:{turnaround:"1-2 days", expertise:"Computer vision A" },
+
   },
   {
-    icon: <FileText className="w-6 h-6 text-white" />,
+    icon: <FileText className="w-5 h-5 text-white" />,
     title: "Manuscript Processing Platform",
     description:
       "Complete proprietary manuscript processing platform with AI-driven workflow automation licensed globally.",
@@ -115,87 +128,101 @@ const services = [
       "Cloud-native architecture",
       "Intelligent progress tracking",
     ],
+    extraInfo:{turnaround:"Custom configuration", expertise:"Licensed by 50+ publishers" },
+
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 },
-  },
-};
+export default function ServiceSection({isService}) {
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, {
+    threshold: 0.3,
+    once: false, // Changed to true for better performance
+  });
 
-const item = {
-  hidden: { opacity: 0, y: 40, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 80, damping: 15 },
-  },
-};
-
-
-export default function ServiceSection() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-gray-50 py-20 px-6">
-      {/* Background blobs */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-r from-pink-400 to-yellow-500 rounded-full blur-3xl opacity-20 animate-spin-slow"></div>
-
+    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 py-20 px-18">
+      {/* Simplified background blobs */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+    
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-gradient-to-r from-pink-400/20 to-yellow-500/20 rounded-full blur-3xl"></div>
       {/* Content container */}
-      <div className="relative max-w-7xl w-full mx-auto z-10 flex flex-col lg:flex-row items-center lg:items-start gap-12">
+      <div
+        className="relative max-w-7xl w-full mx-12 z-10 flex flex-col lg:flex-row items-center lg:items-start gap-12"
+        ref={headerRef}
+      >
         {/* Left side text */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={headerInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+          transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
           className="flex-1 text-center lg:text-left"
         >
-          <p className="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm mb-4">
-            Tech Enabled Solutions
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
-            Proprietary Software Solutions <br /> & Technology Services
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-lg mx-auto lg:mx-0">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={
+              headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+            }
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm mb-6 shadow-lg"
+          >
+            ✨ Tech Enabled Solutions
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={
+              headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight"
+          >
+            Proprietary Software Solutions <br />
+            <span className="text-3xl md:text-4xl">& Technology Services</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={
+              headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+            }
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="mt-6 text-gray-600 text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
+          >
             All our services are powered by cutting-edge proprietary software
             platforms developed in-house. From AI-driven manuscript processing
             to automated quality control systems, we deliver technology-first
             solutions that scale with your business needs.
-          </p>
+          </motion.p>
         </motion.div>
 
-        {/* Right side illustration */}
+        {/* Right side illustration - Simplified */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial={{ opacity: 0, x: 30 }}
+          animate={headerInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="flex-1 flex justify-center lg:justify-end"
         >
-          <Lottie
-            animationData={WorldBusiness}
-            loop={true}
-            className="w-[300px] sm:w-[400px] md:w-[450px] opacity-90"
-          />
+          <div className="relative">
+            <div className="w-[300px] sm:w-[400px] md:w-[450px] h-[300px] sm:h-[400px] md:h-[450px] bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full flex items-center justify-center">
+              <Lottie
+                animationData={WorldBusiness}
+                loop
+                className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
 
       {/* Services Grid */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto z-10"
-      >
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto z-10">
         {services.map((service, idx) => (
-          <ServiceCard key={idx} {...service} />
+          <ServiceCard key={idx} {...service} isService={isService}  index={idx} />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

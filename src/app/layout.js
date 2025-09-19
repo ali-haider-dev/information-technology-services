@@ -1,6 +1,7 @@
 import { Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.variable} ${sans.variable} `}>
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
