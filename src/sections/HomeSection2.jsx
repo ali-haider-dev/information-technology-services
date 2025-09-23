@@ -51,6 +51,7 @@ const HomeHeroSection = () => {
       <div className="relative z-20 max-w-4xl mx-auto px-6 py-30 pt-46">
         <div className="flex flex-col items-center justify-center h-full">
           {/* Main Title and Description */}
+          
           <motion.div
             variants={fadeUp}
             initial="hidden"
