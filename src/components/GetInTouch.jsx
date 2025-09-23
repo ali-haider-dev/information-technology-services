@@ -31,7 +31,7 @@ const GetInTouchSection = ({
       {/* Animated Background Orbs */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
       <div className="absolute bottom-20 right-16 w-40 h-40 bg-indigo-500/8 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-400/12 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/3 left-1/4 w-24 h-24 bg-blue-400/12 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
       
       {/* Floating Geometric Elements */}
       <div className="absolute top-16 right-1/4 w-2 h-8 bg-gradient-to-b from-blue-400/30 to-transparent animate-pulse"></div>

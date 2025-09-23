@@ -67,7 +67,7 @@ const Footer = () => {
       className="relative w-full bg-white pt-20 pb-8 px-18 border-t border-gray-400"
     >
       {/* Subtle background elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600"></div> */}
       {/* <div className="absolute top-10 left-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-40"></div> */}
       <div className="absolute bottom-20 right-16 w-40 h-40 bg-blue-50 rounded-full blur-2xl opacity-30"></div>
 
