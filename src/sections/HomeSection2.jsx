@@ -25,16 +25,16 @@ const float = {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
+      ease: "easeInOut",
+    },
+  },
 };
 
 const HomeHeroSection = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden">
       {/* Background Video */}
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -43,8 +43,10 @@ const HomeHeroSection = () => {
       >
         <source src="/homeHerobg.mov" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
-
+      </video> */}
+     <iframe src="https://drive.google.com/file/d/1PGCqjoW1opOjUXu-ZXC4r85LJyHOp5ok/preview" 
+      className="absolute inset-0 w-full h-full object-cover z-0"
+     width="640" height="480" allow="autoplay"></iframe>
       {/* Video Overlay */}
       <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
 
@@ -62,7 +64,9 @@ const HomeHeroSection = () => {
             <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Empowering Global Technology Excellence
             </h1>
-            <p className="text-sm md:text-lg text-white leading-relaxed max-w-2xl mx-auto mb-8"> {/* Added mb-8 for spacing */}
+            <p className="text-sm md:text-lg text-white leading-relaxed max-w-2xl mx-auto mb-8">
+              {" "}
+              {/* Added mb-8 for spacing */}
               With 900+ skilled professionals, we deliver world-class,
               tech-enabled solutions and comprehensive SaaS platforms to
               international publishers. From manuscript processing systems to
@@ -86,8 +90,13 @@ const HomeHeroSection = () => {
       </div>
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
       `}</style>
     </section>
