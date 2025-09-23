@@ -34,7 +34,7 @@ const HomeHeroSection = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden">
       {/* Background Video */}
-      {/* <video
+      <video
         autoPlay
         loop
         muted
@@ -43,10 +43,7 @@ const HomeHeroSection = () => {
       >
         <source src="/homeHerobg.mov" type="video/mp4" />
         Your browser does not support the video tag.
-      </video> */}
-     <iframe src="https://drive.google.com/file/d/1PGCqjoW1opOjUXu-ZXC4r85LJyHOp5ok/preview" 
-      className="absolute inset-0 w-full h-full object-cover z-0"
-     width="640" height="480" allow="autoplay"></iframe>
+      </video>
       {/* Video Overlay */}
       <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
 
