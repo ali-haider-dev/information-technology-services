@@ -76,7 +76,7 @@ const Footer = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8"
         >
           {/* Company Info Section */}
           <motion.div variants={itemVariants} className="lg:col-span-1">

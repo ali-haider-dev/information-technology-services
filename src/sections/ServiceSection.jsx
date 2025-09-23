@@ -141,13 +141,13 @@ export default function ServiceSection({isService}) {
   });
 
   return (
-    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 py-20 px-18">
+    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-white py-20 px-18">
       {/* Simplified background blobs */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+      {/* <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
     
         <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-gradient-to-r from-pink-400/20 to-yellow-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-gradient-to-r from-pink-400/20 to-yellow-500/20 rounded-full blur-3xl"></div> */}
       {/* Content container */}
       <div
         className="relative max-w-7xl w-full mx-12 z-10 flex flex-col lg:flex-row items-center lg:items-start gap-12"
