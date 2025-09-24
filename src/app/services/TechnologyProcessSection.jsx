@@ -16,7 +16,8 @@ const TechnologyProcessSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, {
     threshold: 0.2,
-    once: false
+    once: false,
+    amount:0.1
   });
 
   const processes = [

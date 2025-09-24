@@ -22,6 +22,7 @@ const coreValues = [
     bgColor: "bg-green-50",
     iconColor: "text-green-600",
     borderColor: "border-green-200",
+
   },
   {
     icon: Users,
@@ -32,6 +33,7 @@ const coreValues = [
     bgColor: "bg-purple-50",
     iconColor: "text-purple-600",
     borderColor: "border-purple-200",
+
   },
   {
     icon: Target,
@@ -42,6 +44,7 @@ const coreValues = [
     bgColor: "bg-orange-50",
     iconColor: "text-orange-600",
     borderColor: "border-orange-200",
+
   },
   {
     icon: Heart,
@@ -52,6 +55,7 @@ const coreValues = [
     bgColor: "bg-red-50",
     iconColor: "text-red-600",
     borderColor: "border-red-200",
+
   },
   {
     icon: Globe,
@@ -62,6 +66,7 @@ const coreValues = [
     bgColor: "bg-indigo-50",
     iconColor: "text-indigo-600",
     borderColor: "border-indigo-200",
+
   },
 ];
 
@@ -71,8 +76,8 @@ const CoreValues = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
       },
     },
   };
@@ -89,7 +94,7 @@ const CoreValues = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeInOut",
       },
     },
   };
@@ -101,20 +106,20 @@ const CoreValues = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeInOut",
       },
     },
   };
 
   return (
-    <section className="w-full px-6 py-20 lg:px-20  bg-white">
+    <section className="w-full px-6 py-10 lg:px-20  bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: false,amount:0.1}}
           variants={headerVariants}
         >
           <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -132,7 +137,7 @@ const CoreValues = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: false,amount:0.1,}}
           variants={containerVariants}
         >
           {coreValues.map((value, index) => {
@@ -170,7 +175,7 @@ const CoreValues = () => {
                   </p>
 
                   {/* Bottom accent */}
-                  <motion.div
+                 <motion.div
                     className={`w-0 h-1 ${value.iconColor.replace(
                       "text-",
                       "bg-"

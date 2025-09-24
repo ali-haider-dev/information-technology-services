@@ -66,7 +66,7 @@ const ContactSection = () => {
             className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-12"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.6 }}
+            viewport={{ once: false}}
             variants={headerVariants}
           >
             {/* Tag */}

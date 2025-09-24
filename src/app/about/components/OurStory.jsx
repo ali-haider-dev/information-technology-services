@@ -18,45 +18,50 @@ const milestones = [
 
 const OurStory = () => {
   return (
-    <section className="relative w-full px-6 py-20 lg:px-20 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
+    <section className="relative w-full px-6 py-10 lg:px-20 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#1c398e]/5 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-100/30 to-transparent rounded-full blur-2xl"></div>
-      
+
       <div className="relative max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: false }}
+          viewport={{ once: false,amount:0.1 }}
         >
           <div className="inline-flex items-center px-4 py-2 bg-[#1c398e]/10 rounded-full mb-4">
-            <span className="text-[#1c398e] text-sm font-medium">Our Journey</span>
+            <span className="text-[#1c398e] text-sm font-medium">
+              Our Journey
+            </span>
           </div>
           <h1 className="text-2xl lg:text-4xl font-bold bg-gradient-to-r from-[#1c398e] to-blue-600 bg-clip-text text-transparent mb-4">
             Transforming Publishing Since 1994
           </h1>
           <p className="text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            From a small team of dedicated editors to Asia's leading tech-enabled publishing solutions provider
+            From a small team of dedicated editors to Asia's leading
+            tech-enabled publishing solutions provider
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-12  items-start">
+        <div className="grid md:grid-cols-12 gap-12  items-start">
           {/* Our Story */}
-          <div className="lg:col-span-6">
+          <div className="md:col-span-6">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: false }}
+              viewport={{ once: false,amount:0.1 }}
               className="mb-8"
             >
-              <h2 className="text-xl lg:text-3xl font-bold text-gray-900 mb-3">Our Story</h2>
+              <h2 className="text-xl lg:text-3xl font-bold text-gray-900 mb-3">
+                Our Story
+              </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#1c398e] to-blue-500 rounded-full"></div>
             </motion.div>
-            
+
             <div className="space-y-8">
               {storyParagraphs.map((para, i) => (
                 <motion.div
@@ -64,7 +69,7 @@ const OurStory = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2, duration: 0.6 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: false,amount:0.1}}
                   className="group"
                 >
                   <p className="text-gray-700 leading-relaxed text-sm max-w-2xl group-hover:text-blue-900 transition-colors duration-300">
@@ -79,40 +84,45 @@ const OurStory = () => {
           </div>
 
           {/* Milestones */}
-          <div className="lg:col-span-6">
+          <div className="md:col-span-6">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: false }}
+              viewport={{ once: false,amount:0.1 }}
               className="sticky top-8"
             >
               <div className="relative p-8 lg:p-10 rounded-3xl bg-[#1c398e] shadow-2xl shadow-[#1c398e]/20 overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-xl"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-800/30 rounded-full blur-lg"></div>
-                
+
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-8">
                     <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white">Key Milestones</h3>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white">
+                      Key Milestones
+                    </h3>
                   </div>
-                  
+
                   <div className="space-y-6">
                     {milestones.map((milestone, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          delay: 0.3 + i * 0.15,
-                          duration: 0.5,
-                        }}
-                        viewport={{ once: false }}
+                        // transition={{
+                        //   delay: 0.1 + i * 0.15,
+                        // }}
+                        viewport={{ once: false,amount:0.1 }}
                         whileHover={{
                           scale: 1.1,
                           x: 8,
-                          transition: { duration: 0.2, ease: "easeInOut" },
+                          transition: { duration: 0.3, ease: "easeInOut" }, // entering hover
+                        }}
+                        transition={{
+                          type: "tween",
+                          duration: 0, // leaving hover → instant reset
                         }}
                         className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-blue-800/30 transition-all duration-300 cursor-pointer"
                       >
@@ -136,13 +146,19 @@ const OurStory = () => {
                       </motion.div>
                     ))}
                   </div>
-                  
+
                   {/* Bottom accent */}
                   <div className="mt-8 pt-6 border-t border-white/20">
                     <div className="flex items-center justify-center gap-2">
                       <div className="w-2 h-2 bg-white/40 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                      <div className="w-2 h-2 bg-white rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                      <div
+                        className="w-2 h-2 bg-white/60 rounded-full animate-pulse"
+                        style={{ animationDelay: "0.5s" }}
+                      ></div>
+                      <div
+                        className="w-2 h-2 bg-white rounded-full animate-pulse"
+                        style={{ animationDelay: "1s" }}
+                      ></div>
                     </div>
                   </div>
                 </div>

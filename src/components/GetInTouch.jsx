@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Sparkles, Zap, Globe } from "lucide-react";
+import Link from "next/link";
 
 const GetInTouchSection = ({ 
   primaryButtonText = "Start Your Project", 
@@ -114,7 +115,9 @@ const GetInTouchSection = ({
             >
               <span className="relative z-10 flex items-center gap-3 text-based">
                 <Globe className="w-5 h-5" />
+                <Link href={'/contact'}>
                 {primaryButtonText}
+                </Link>
                 <motion.div
                   initial={{ x: 0 }}
                   whileHover={{ x: 4 }}

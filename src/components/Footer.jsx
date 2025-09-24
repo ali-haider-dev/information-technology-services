@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Phone, Clock, MapPin, Mail, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   const ref = useRef(null);
@@ -60,7 +61,13 @@ const Footer = () => {
     "Privacy Policy",
     "Terms of Service"
   ];
-
+const getLink= (item)=>{
+if(item=="Our Team"){
+  return 'about'
+}else{
+  return item.split(" ")[0].toLowerCase()
+}
+}
   return (
     <footer 
       ref={ref}
@@ -150,7 +157,7 @@ const Footer = () => {
                     href="#" 
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
                   >
-                    <span>{item}</span>
+                    <Link href={`/${getLink(item)}`}>{item}</Link>
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   </a>
                 </motion.li>
