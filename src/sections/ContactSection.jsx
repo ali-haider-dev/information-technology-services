@@ -1,8 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Mail, MapPin, Clock } from "lucide-react";
-
+import { SendEmail } from "../app/contact/contact.actions";
+import { useActionState } from "react";
 const ContactSection = () => {
+  const initialErrorstate = {
+    errors:{}
+  };
+
+  const [state, formAction, isPending] = useActionState(
+    SendEmail,
+    initialErrorstate
+  );
   const headerVariants = {
     hidden: { opacity: 0, y: -60 },
     visible: {
@@ -26,7 +35,7 @@ const ContactSection = () => {
       },
     },
   };
-
+console.log("Errors",state?.errors)
   const serviceOptions = [
     "Academic Copy Editing",
     "Type Setting & XML Conversion",
@@ -38,7 +47,7 @@ const ContactSection = () => {
     "E-Commerce & Payment Gateways",
     "Content Delivery & Access Control",
     "Careers Inquiry",
-    "Multiple Services"
+    "Multiple Services",
   ];
 
   return (
@@ -66,7 +75,7 @@ const ContactSection = () => {
             className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-12"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false}}
+            viewport={{ once: false }}
             variants={headerVariants}
           >
             {/* Tag */}
@@ -86,7 +95,7 @@ const ContactSection = () => {
             </h2>
 
             {/* Accent Line */}
-            <div className="w-[27rem] h-1 bg-gradient-to-r from-[#1c398e] to-blue-500 rounded-full mb-8"></div>
+            <div className="w-[27rem] h-1 bg-gradient-to-r from-[#1c398e] to-blue-400 rounded-full mb-8"></div>
 
             {/* Description */}
             <p className="text-sm text-[#1c398e] leading-relaxed">
@@ -107,8 +116,7 @@ const ContactSection = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin size={20} className="text-blue-600" />
-                <span>Information Technology Services
-Karachi, Pakistan</span>
+                <span>Information Technology Services Karachi, Pakistan</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock size={20} className="text-blue-600" />
@@ -128,82 +136,132 @@ Karachi, Pakistan</span>
             <h3 className="text-xl font-bold text-[#1c398e] mb-4">
               Send Us a Message
             </h3>
-            <form className="space-y-3">
+            <form action={formAction} className="space-y-3">
               {/* First Name & Last Name */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex-1">
-                  <label htmlFor="firstName" className="block text-xs font-medium text-gray-700 mb-0.5">First Name</label>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-xs font-medium text-gray-700 mb-2"
+                  >
+                    First Name
+                  </label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
                     placeholder="First Name"
-                    className="w-full px-2 py-1.5 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
+                    className="w-full p-2.5 mb-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
                   />
+                  {
+                    state?.errors?.firstName && <p className="text-red-400 text-xs">{ state?.errors.firstName}</p>
+                  }
                 </div>
                 <div className="flex-1">
-                  <label htmlFor="lastName" className="block text-xs font-medium text-gray-700 mb-0.5">Last Name</label>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-xs font-medium text-gray-700 mb-2"
+                  >
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     id="lastName"
                     name="lastName"
                     placeholder="Last Name"
-                    className="w-full px-2 py-1.5 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
+                    className="w-full p-2.5 mb-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
                   />
+                   {
+                    state?.errors?.lastName && <p className="text-red-400 text-xs">{ state?.errors.lastName}</p>
+                  }
                 </div>
               </div>
-              
+
               {/* Email Address */}
               <div>
-                <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-0.5">Email Address</label>
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-medium text-gray-700 mb-2"
+                >
+                  Email Address
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
+                  className="w-full p-2.5 mb-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
                 />
+                 {
+                    state?.errors?.email && <p className="text-red-400 text-xs">{ state?.errors.email}</p>
+                  }
               </div>
 
               {/* Organization */}
               <div>
-                <label htmlFor="organization" className="block text-xs font-medium text-gray-700 mb-0.5">Organization</label>
+                <label
+                  htmlFor="organization"
+                  className="block text-xs font-medium text-gray-700 mb-2"
+                >
+                  Organization
+                </label>
                 <input
                   type="text"
                   id="organization"
                   name="organization"
                   placeholder="Organization name"
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
+                  className="w-full p-2.5 mb-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
                 />
+                 {
+                    state?.errors?.organization && <p className="text-red-400 text-xs">{ state?.errors.organization}</p>
+                  }
               </div>
 
               {/* Service Interest */}
               <div>
-                <label htmlFor="service" className="block text-xs font-medium text-gray-700 mb-0.5">Service Interest</label>
+                <label
+                  htmlFor="service"
+                  className="block text-xs font-medium text-gray-700 mb-2"
+                >
+                  Service Interest
+                </label>
                 <select
                   id="service"
                   name="service"
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
+                  className="w-full p-2.5 mb-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors"
                 >
                   <option value="">Select a service</option>
                   {serviceOptions.map((service, index) => (
-                    <option key={index} value={service}>{service}</option>
+                    <option key={index} value={service}>
+                      {service}
+                    </option>
                   ))}
                 </select>
+                 {
+                    state?.errors?.service && <p className="text-red-400 text-xs">{ state?.errors.service}</p>
+                  }
               </div>
 
               {/* Project Details */}
               <div>
-                <label htmlFor="projectDetails" className="block text-xs font-medium text-gray-700 mb-0.5">Project Details</label>
+                <label
+                  htmlFor="projectDetails"
+                  className="block text-xs font-medium text-gray-700 mb-2"
+                >
+                  Project Details
+                </label>
                 <textarea
                   id="projectDetails"
                   name="projectDetails"
                   rows={2}
                   placeholder="Project requirements..."
-                  className="w-full px-2 py-1.5 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors resize-y"
+                  className="w-full p-2.5 mb-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-[#1c398e]/50 focus:border-transparent transition-colors resize-y"
                 ></textarea>
+                 {
+                    state?.errors?.projectDetails && <p className="text-red-400 text-xs">{ state?.errors.projectDetails}</p>
+                  }
               </div>
-              
+
               {/* Submit button */}
               <motion.button
                 type="submit"

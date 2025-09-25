@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/contact/contact.actions.js"  ],
   "exclude": [
     "node_modules"
   ]
