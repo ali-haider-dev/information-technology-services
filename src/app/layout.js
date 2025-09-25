@@ -2,20 +2,21 @@ import { Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { SiteLoader } from "../components/SiteLoader.jsx";
 
 const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-})
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 const sans = Open_Sans({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
-})
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 export const metadata = {
   title: { default: "Information technology services", template: "%s | ITS" },
@@ -26,9 +27,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${sans.variable} `}>
-        <Navbar/>
-        {children}
-        <Footer/>
+        <SiteLoader>
+          <Navbar />
+          {children}
+          <Footer />
+        </SiteLoader>
       </body>
     </html>
   );

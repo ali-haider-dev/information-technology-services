@@ -153,13 +153,13 @@ if(item=="Our Team"){
                   custom={index}
                   className="group text-sm"
                 >
-                  <a 
-                    href="#" 
+                 <Link href={`/${getLink(item)}`}
+                  
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
                   >
-                    <Link href={`/${getLink(item)}`}>{item}</Link>
+                    {item}
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>
