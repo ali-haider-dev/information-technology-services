@@ -42,7 +42,7 @@ const coreValues = [
       "We continuously evolve our processes and technology to deliver cutting-edge solutions.",
     color: "orange",
     bgColor: "bg-orange-50",
-    iconColor: "text-orange-600",
+    iconColor: "text-orange-500",
     borderColor: "border-orange-200",
 
   },
@@ -53,7 +53,7 @@ const coreValues = [
       "We work closely with our clients as partners, understanding their unique needs and goals.",
     color: "red",
     bgColor: "bg-red-50",
-    iconColor: "text-red-600",
+    iconColor: "text-red-500",
     borderColor: "border-red-200",
 
   },
@@ -64,7 +64,7 @@ const coreValues = [
       "We're committed to advancing global knowledge by supporting researchers and publishers worldwide.",
     color: "indigo",
     bgColor: "bg-indigo-50",
-    iconColor: "text-indigo-600",
+    iconColor: "text-indigo-500",
     borderColor: "border-indigo-200",
 
   },
@@ -119,7 +119,7 @@ const CoreValues = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false,amount:0.1}}
+          viewport={{ once: true,amount:0.1}}
           variants={headerVariants}
         >
           <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -137,7 +137,7 @@ const CoreValues = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false,amount:0.1,}}
+          viewport={{ once: true,amount:0.1,}}
           variants={containerVariants}
         >
           {coreValues.map((value, index) => {
@@ -175,12 +175,12 @@ const CoreValues = () => {
                   </p>
 
                   {/* Bottom accent */}
-                 <motion.div
-                    className={`w-0 h-1 ${value.iconColor.replace(
-                      "text-",
-                      "bg-"
-                    )} rounded-full mt-4 group-hover:w-12 transition-all duration-500 ease-out`}
-                  ></motion.div>
+                    <motion.div
+                  className={`w-0 h-1 ${value.iconColor.replace(
+                    "text-",
+                    "bg-"
+                  )} rounded-full mx-auto mt-4 group-hover:w-16 transition-all duration-500 ease-out`}
+                ></motion.div>
                 </div>
 
                 {/* Hover overlay */}

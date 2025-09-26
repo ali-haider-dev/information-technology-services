@@ -86,7 +86,7 @@ const StatsCards = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }} 
+          viewport={{ once: true, amount: 0.3 }} 
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
         >
           {stats.map((stat, index) => (

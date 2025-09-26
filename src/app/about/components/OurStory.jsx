@@ -30,7 +30,7 @@ const OurStory = () => {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: false,amount:0.1 }}
+          viewport={{ once: true,amount:0.1 }}
         >
           <div className="inline-flex items-center px-4 py-2 bg-[#1c398e]/10 rounded-full mb-4">
             <span className="text-[#1c398e] text-sm font-medium">
@@ -53,7 +53,7 @@ const OurStory = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: false,amount:0.1 }}
+              viewport={{ once: true,amount:0.1 }}
               className="mb-8"
             >
               <h2 className="text-xl lg:text-3xl font-bold text-gray-900 mb-3">
@@ -69,7 +69,7 @@ const OurStory = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2, duration: 0.6 }}
-                  viewport={{ once: false,amount:0.1}}
+                  viewport={{ once: true,amount:0.1}}
                   className="group"
                 >
                   <p className="text-gray-700 leading-relaxed text-sm max-w-2xl group-hover:text-blue-900 transition-colors duration-300">
@@ -89,7 +89,7 @@ const OurStory = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: false,amount:0.1 }}
+              viewport={{ once: true,amount:0.1 }}
               className="sticky top-8"
             >
               <div className="relative p-8 lg:p-10 rounded-3xl bg-[#1c398e] shadow-2xl shadow-[#1c398e]/20 overflow-hidden">
@@ -114,7 +114,7 @@ const OurStory = () => {
                         // transition={{
                         //   delay: 0.1 + i * 0.15,
                         // }}
-                        viewport={{ once: false,amount:0.1 }}
+                        viewport={{ once: true,amount:0.1 }}
                         whileHover={{
                           scale: 1.1,
                           x: 8,

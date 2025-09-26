@@ -7,7 +7,7 @@ const ServiceCard = ({ icon, title, description, features = [], extraInfo={}, in
   const ref = useRef(null);
   const inView = useInView(ref, {
     threshold: 0.2,
-    once: false, // This is crucial - only animate once
+    once: true, // This is crucial - only animate once
     margin: "0px 0px -100px 0px", // Start animation earlier
     amount:0.1
   });

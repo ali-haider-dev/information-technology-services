@@ -137,7 +137,7 @@ export default function ServiceSection({isService}) {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, {
     threshold: 0.3,
-    once: false, // Changed to true for better performance
+    once: true, // Changed to true for better performance
   });
 
   return (

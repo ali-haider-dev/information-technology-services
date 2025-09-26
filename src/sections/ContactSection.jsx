@@ -72,10 +72,10 @@ console.log("Errors",state?.errors)
         <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
           {/* Left Side - Text Content */}
           <motion.div
-            className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-12"
+            className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-18"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={headerVariants}
           >
             {/* Tag */}
@@ -130,7 +130,7 @@ console.log("Errors",state?.errors)
             className="w-full lg:w-1/2 bg-white rounded-2xl shadow-xl p-6 lg:p-8 border border-gray-100"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
             variants={formVariants}
           >
             <h3 className="text-xl font-bold text-[#1c398e] mb-4">

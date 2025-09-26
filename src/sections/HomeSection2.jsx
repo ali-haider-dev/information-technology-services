@@ -57,7 +57,7 @@ const HomeHeroSection = () => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false}}
+            viewport={{ once: true}}
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
@@ -79,7 +79,7 @@ const HomeHeroSection = () => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.4 }} // Added delay
             className="px-8 py-3 bg-white text-[#1c398E] border border-[#1c398E] font-semibold rounded-full shadow-lg hover:bg-[#1c398E] hover:text-white transition-all duration-300 ease-in-out"
           >

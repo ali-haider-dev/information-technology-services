@@ -124,7 +124,7 @@ const OpenPositions = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={headerVariants}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -142,7 +142,7 @@ const OpenPositions = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
           {positions.map((position) => {
@@ -245,7 +245,7 @@ const OpenPositions = () => {
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="inline-flex items-center px-6 py-3 bg-gray-50 rounded-full">

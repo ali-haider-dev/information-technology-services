@@ -16,7 +16,7 @@ const GetInTouchSection = ({
   const inView = useInView(ref, {
     delay: 0.2,
     threshold: 0.5,
-    once: false
+    once: true
   });
 
   return (
@@ -148,7 +148,9 @@ const GetInTouchSection = ({
             >
               <span className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
+                <Link href={'/contact'}>
                 {secondaryButtonText}
+                </Link>
               </span>
             </motion.button>
           )}

@@ -77,7 +77,7 @@ const LeadershipTeam = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={headerVariants}
         >
           <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -97,7 +97,7 @@ const LeadershipTeam = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
           {leadershipTeam.map((leader, index) => (
