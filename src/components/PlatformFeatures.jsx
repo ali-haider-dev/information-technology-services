@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { BookOpen, DollarSign, Users, ShieldCheck, Clock, BarChart2, Globe, Zap, CircleCheckBig, CreditCard } from "lucide-react";
+import { BookOpen, DollarSign, Users, ShieldCheck, Clock, BarChart2, Globe, Zap, CircleCheckBig, CreditCard, Lock, Cloud } from "lucide-react";
 import React from 'react';
 
 // Map icon names (strings) to actual Lucide React components
@@ -14,7 +14,9 @@ const iconMap = {
   Global:Globe,
   Financial:Zap,
   DigitalContent:CircleCheckBig,
-  Gateway:CreditCard
+  Gateway:CreditCard,
+  AccessControl:Lock,
+  API:Cloud
 };
 
 // --- Framer Motion Variants ---

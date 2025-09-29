@@ -72,14 +72,7 @@ const GetInTouchSection = ({
             >
               Ready to Transform Your Technology Infrastructure?
             </motion.span>
-            {/* <motion.span
-              initial={{ opacity: 0, x: 20 }}
-              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="block bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent"
-            >
-              Technology Infrastructure?
-            </motion.span> */}
+           
           </h2>
         </motion.div>
 
@@ -156,32 +149,7 @@ const GetInTouchSection = ({
           )}
         </motion.div>
 
-        {/* Trust Indicators */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-400 text-sm"
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span>Trusted by 50+ Publishers</span>
-          </div>
-          <div className="hidden sm:block w-px h-4 bg-slate-600"></div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <span>100K+ Projects Completed</span>
-          </div>
-          <div className="hidden sm:block w-px h-4 bg-slate-600"></div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-            <span>24/7 Global Support</span>
-          </div>
-        </motion.div> */}
       </div>
-
-      {/* Bottom Wave Effect
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-slate-900/50 to-transparent"></div> */}
     </section>
   );
 };

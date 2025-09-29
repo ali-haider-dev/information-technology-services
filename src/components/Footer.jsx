@@ -64,15 +64,8 @@ const Footer = () => {
     }
   };
 
-  // New helper function to format the service link path correctly
   const getServiceLink = (serviceName) => {
-    // 1. Convert to lowercase
-    // 2. Replace all whitespace with a hyphen (for clean URL slug)
-    // 3. Prefix with '/services/' to ensure absolute path from root
-    return `/services/${serviceName
-      .toLowerCase()
-      .replace(/\s/g, "")
-      }`;
+    return `/services/${serviceName.toLowerCase().replace(/\s/g, "")}`;
   };
 
   return (
@@ -80,11 +73,7 @@ const Footer = () => {
       ref={ref}
       className="relative w-full bg-white pt-20 pb-8 px-18 border-t border-gray-400 font-sans"
     >
-      {/* Subtle background elements */}
-      {/* <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600"></div> */}
-      {/* <div className="absolute top-10 left-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-40"></div> */}
       <div className="absolute bottom-20 right-16 w-40 h-40 bg-blue-50 rounded-full blur-2xl opacity-30"></div>
-
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
@@ -147,7 +136,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
                   >
-                    {/* MODIFICATION HERE: Using getServiceLink to ensure an absolute path */}
+                    
                     <Link href={getServiceLink(service)}>{service}</Link>
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   </a>
@@ -210,13 +199,13 @@ const Footer = () => {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 pt-8 border-t border-gray-200"
         >
-          <div className="items-center justify-between ">
+          <div className="flex items-center flex-col gap-5">
             <p className="text-gray-600 text-center text-sm">
               © {new Date().getFullYear()} ITS. All rights reserved. Founded
               1994 • Trusted by 50+ global STM publishers.
             </p>
 
-            {/* <div className="flex items-center gap-6">
+            {/* <div className="flex items-center gap-2">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="w-3 h-3 bg-green-500 rounded-full animate-pulse"
@@ -227,10 +216,10 @@ const Footer = () => {
           </div>
         </motion.div>
       </div>
-
       {/* Floating elements */}
-      <div className="absolute bottom-10 left-[27%] w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
-      <div className="absolute top-32 right-1/3 w-1 h-6 bg-gradient-to-b from-blue-500/20 to-transparent animate-pulse"></div>
+      <div className="absolute bottom-9.5 left-[27%] w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>{" "}
+      <div className="absolute bottom-9.5 right-[27%] w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
+      <div className="absolute top-32 right-[27%] w-1 h-6 bg-gradient-to-b from-blue-500/20 to-transparent animate-pulse"></div>
     </footer>
   );
 };

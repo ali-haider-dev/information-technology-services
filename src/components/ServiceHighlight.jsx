@@ -3,13 +3,12 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const ServiceHighlights = ({ highlights, pricing, onGetQuote }) => {
-  // Use a different variant for the header to prevent it from inheriting the stagger delay
   const headerVariant = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
-  // Staggered variant for the highlight cards and the final pricing card
+ 
   const cardVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: (index) => ({
@@ -24,7 +23,7 @@ const ServiceHighlights = ({ highlights, pricing, onGetQuote }) => {
   };
 
   return (
-    // Outer container: Increased padding and slightly adjusted shadow
+    
     <div className="space-y-4 bg-white shadow-xl p-6 mb-8 rounded-3xl border border-gray-100 font-sans">
       {/* -------------------- Section Header -------------------- */}
       <motion.h2
@@ -78,8 +77,8 @@ const ServiceHighlights = ({ highlights, pricing, onGetQuote }) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={cardVariants}
-        custom={highlights.length + 1} // Ensure this animates last
-        // Strong primary color for the pricing card to draw attention
+        custom={highlights.length + 1} 
+       
         className="bg-[#1c398e] rounded-xl p-6 shadow-2xl mt-6 transform hover:scale-[1.01] transition-transform duration-300"
       >
         <h3 className="text-md font-extrabold text-white mb-2">
@@ -91,8 +90,7 @@ const ServiceHighlights = ({ highlights, pricing, onGetQuote }) => {
 
         <motion.button
           onClick={onGetQuote}
-          // Added 'border-white border-2' for the initial border.
-          // Added 'group-hover:border-white' to explicitly keep the border white on hover.
+     
           className="relative w-full bg-white text-[#1c398e] font-bold py-3 px-4 rounded-xl shadow-md 
              flex items-center justify-center gap-2 text-base overflow-hidden transition-colors duration-300 
              border-1 border-white group group-hover:border-white"

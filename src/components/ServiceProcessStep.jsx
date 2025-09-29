@@ -76,16 +76,16 @@ const ProcessSteps = ({ steps }) => {
             >
               <div className="flex items-start gap-3">
                 
-                {/* Step Circle with Line */}
+               
                 <div className="relative flex flex-col items-center">
                   <motion.div 
                     // Apply the activeAnimation only to the currently active step
                     animate={isCurrentActive ? activeAnimation : {}}
                     className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                       isCompleted 
-                        ? 'bg-green-500 text-white' // Changed to green for completed steps for better UX
+                        ? 'bg-green-500 text-white' 
                         : isCurrentActive
-                          ? 'bg-orange-500 text-white shadow-lg' // Primary color for active step
+                          ? 'bg-orange-500 text-white shadow-lg' 
                           : 'bg-gray-200 text-gray-400'
                     }`}
                   >

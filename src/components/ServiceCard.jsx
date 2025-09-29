@@ -39,7 +39,7 @@ const ServiceCard = ({
 
   const currentGradient = gradients[index % gradients.length];
 
-  // Simplified animation variants
+  
   const cardVariants = {
     hidden: {
       opacity: 0,
