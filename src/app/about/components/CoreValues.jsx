@@ -12,6 +12,7 @@ const coreValues = [
     bgColor: "bg-blue-50",
     iconColor: "text-blue-600",
     borderColor: "border-blue-200",
+    accentBg: "bg-blue-600",
   },
   {
     icon: Shield,
@@ -22,7 +23,7 @@ const coreValues = [
     bgColor: "bg-green-50",
     iconColor: "text-green-600",
     borderColor: "border-green-200",
-
+    accentBg: "bg-green-600",
   },
   {
     icon: Users,
@@ -33,7 +34,7 @@ const coreValues = [
     bgColor: "bg-purple-50",
     iconColor: "text-purple-600",
     borderColor: "border-purple-200",
-
+    accentBg: "bg-purple-600",
   },
   {
     icon: Target,
@@ -44,7 +45,7 @@ const coreValues = [
     bgColor: "bg-orange-50",
     iconColor: "text-orange-500",
     borderColor: "border-orange-200",
-
+    accentBg: "bg-orange-600",
   },
   {
     icon: Heart,
@@ -55,7 +56,7 @@ const coreValues = [
     bgColor: "bg-red-50",
     iconColor: "text-red-500",
     borderColor: "border-red-200",
-
+    accentBg: "bg-red-600",
   },
   {
     icon: Globe,
@@ -66,7 +67,7 @@ const coreValues = [
     bgColor: "bg-indigo-50",
     iconColor: "text-indigo-500",
     borderColor: "border-indigo-200",
-
+    accentBg: "bg-indigo-600",
   },
 ];
 
@@ -119,7 +120,7 @@ const CoreValues = () => {
           className="text-center mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true,amount:0.1}}
+          viewport={{ once: true, amount: 0.1 }}
           variants={headerVariants}
         >
           <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
@@ -137,7 +138,7 @@ const CoreValues = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true,amount:0.1,}}
+          viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
         >
           {coreValues.map((value, index) => {
@@ -175,12 +176,9 @@ const CoreValues = () => {
                   </p>
 
                   {/* Bottom accent */}
-                    <motion.div
-                  className={`w-0 h-1 ${value.iconColor.replace(
-                    "text-",
-                    "bg-"
-                  )} rounded-full mx-auto mt-4 group-hover:w-16 transition-all duration-500 ease-out`}
-                ></motion.div>
+                  <motion.div
+                    className={`w-0 h-1 ${value.accentBg} rounded-full mx-auto mt-4 group-hover:w-16 transition-all duration-500 ease-out`}
+                  ></motion.div>
                 </div>
 
                 {/* Hover overlay */}

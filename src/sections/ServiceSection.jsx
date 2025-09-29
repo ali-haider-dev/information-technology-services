@@ -141,7 +141,7 @@ export default function ServiceSection({isService}) {
   });
 
   return (
-    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-white py-20 px-18">
+    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-white py-20 px-18 font-sans">
       {/* Simplified background blobs */}
       {/* <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
@@ -177,10 +177,10 @@ export default function ServiceSection({isService}) {
               headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
             }
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight"
+            className="text-3xl md:text-3xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent leading-tight"
           >
             Proprietary Software Solutions <br />
-            <span className="text-3xl md:text-4xl">& Technology Services</span>
+            <span className="text-3xl md:text-3xl">& Technology Services</span>
           </motion.h2>
 
           <motion.p
@@ -189,7 +189,7 @@ export default function ServiceSection({isService}) {
               headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
             }
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="mt-6 text-gray-600 text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed"
+            className="mt-6 text-gray-600 text-md max-w-lg mx-auto lg:mx-0 leading-relaxed"
           >
             All our services are powered by cutting-edge proprietary software
             platforms developed in-house. From AI-driven manuscript processing

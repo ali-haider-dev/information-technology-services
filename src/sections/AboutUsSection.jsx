@@ -61,7 +61,7 @@ const AboutUsSection = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white flex items-center relative overflow-hidden pt-5">
+    <section className="min-h-screen bg-white flex items-center relative overflow-hidden pt-5 font-sans">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

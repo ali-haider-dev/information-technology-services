@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { BookOpen, DollarSign, Users, ShieldCheck, Clock, BarChart2 } from "lucide-react";
+import { BookOpen, DollarSign, Users, ShieldCheck, Clock, BarChart2, Globe, Zap, CircleCheckBig, CreditCard } from "lucide-react";
 import React from 'react';
 
 // Map icon names (strings) to actual Lucide React components
@@ -11,6 +11,10 @@ const iconMap = {
   QualityControl: ShieldCheck,
   Production: Clock,
   Analytics: BarChart2,
+  Global:Globe,
+  Financial:Zap,
+  DigitalContent:CircleCheckBig,
+  Gateway:CreditCard
 };
 
 // --- Framer Motion Variants ---
@@ -37,24 +41,17 @@ const cardVariants = {
   },
 };
 
-/**
- * A reusable component to display a grid of features or modules.
- * @param {string} title - The main title for the section (e.g., "Core Modules").
- * @param {Array} modules - An array of module objects.
- * @param {string} modules[].icon - A key string that maps to a Lucide icon (e.g., 'Manuscript').
- * @param {string} modules[].title - The title of the module (e.g., "Manuscript Management").
- * @param {string} modules[].description - The detailed description of the module.
- */
+
 const PlatformFeatures = ({ title, modules=[] }) => {
   return (
-    <section className="w-full px-18 py-20 lg:py-24 bg-white">
+    <section className="w-full px-18 py-20 lg:py-24 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <div className="w-50 h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-full mx-auto"></div>
+          <div className="w-50 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto"></div>
         </div>
 
         {/* Modules Grid */}
@@ -67,7 +64,7 @@ const PlatformFeatures = ({ title, modules=[] }) => {
         >
           {modules?.map((module, index) => {
             const IconComponent = iconMap[module.icon] || BookOpen; // Default to BookOpen if icon key is missing
-            const iconColor =  'text-green-500' 
+            const iconColor =  'text-orange-500' 
 
             return (
               <motion.div
@@ -78,7 +75,7 @@ const PlatformFeatures = ({ title, modules=[] }) => {
               >
                 <div className="flex items-start gap-2 mb-2">
                   {/* Icon */}
-                  <div className={`p-2 rounded-lg ${iconColor} bg-green-100`}>
+                  <div className={`p-2 rounded-lg ${iconColor} bg-orange-100`}>
                     <IconComponent className="w-6 h-6" />
                   </div>
                   {/* Title */}

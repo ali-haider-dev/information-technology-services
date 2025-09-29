@@ -51,7 +51,7 @@ console.log("Errors",state?.errors)
   ];
 
   return (
-    <section className="relative max-w-7xl px-6 py-30 lg:px-20 bg-gradient-to-br from-gray-50 via-white to-[#1c398e]/5 overflow-hidden">
+    <section className="relative max-w-7xl  py-30 px-18 bg-gradient-to-br from-gray-50 via-white to-[#1c398e]/5 overflow-hidden font-sans">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#1c398e]/3 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#1c398e]/5 to-transparent rounded-full blur-2xl"></div>
@@ -68,11 +68,11 @@ console.log("Errors",state?.errors)
         style={{ animationDelay: "0.5s" }}
       ></div>
 
-      <div className="relative max-w-7xl mx-auto py-12">
+      <div className="relative max-w-7xl mx-auto py-12 lg:-pt-50 ">
         <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
           {/* Left Side - Text Content */}
           <motion.div
-            className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-18"
+            className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-40 sm:-mt-30"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

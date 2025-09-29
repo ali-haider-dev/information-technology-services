@@ -22,7 +22,7 @@ const GetInTouchSection = ({
   return (
     <section 
       ref={ref}
-      className="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-10 "
+      className="relative w-full overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-10 font-sans"
     >
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.15),transparent_50%)]"></div>

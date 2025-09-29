@@ -9,7 +9,7 @@ const Footer = () => {
   const ref = useRef(null);
   const inView = useInView(ref, {
     threshold: 0.2,
-    once: true
+    once: true,
   });
 
   const containerVariants = {
@@ -18,9 +18,9 @@ const Footer = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -30,48 +30,55 @@ const Footer = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const services = [
     "Management ERP Systems",
-    "E-Commerce & Payment Gateways", 
+    "E-Commerce & Payment Gateways",
     "Content Delivery & Access Control",
     "AI Copy Editing Platform",
     "Automated Typesetting & XML",
     "Intelligent Reference Verification",
     "AI Plagiarism Detection",
     "Automated Figure Enhancement",
-    "Proprietary Manuscript Platform"
+    "Proprietary Manuscript Platform",
   ];
 
-  const company = [
-    "About Us",
-    "Our Team", 
-    "Careers",
-    "Contact"
-  ];
+  const company = ["About Us", "Our Team", "Careers", "Contact"];
 
   const connect = [
     "Client Portal",
     "Support Center",
-    "Quality Standards", 
+    "Quality Standards",
     "Privacy Policy",
-    "Terms of Service"
+    "Terms of Service",
   ];
-const getLink= (item)=>{
-if(item=="Our Team"){
-  return 'about'
-}else{
-  return item.split(" ")[0].toLowerCase()
-}
-}
+  const getLink = (item) => {
+    if (item == "Our Team") {
+      return "about";
+    } else {
+      return item.split(" ")[0].toLowerCase();
+    }
+  };
+
+  // New helper function to format the service link path correctly
+  const getServiceLink = (serviceName) => {
+    // 1. Convert to lowercase
+    // 2. Replace all whitespace with a hyphen (for clean URL slug)
+    // 3. Prefix with '/services/' to ensure absolute path from root
+    return `/services/${serviceName
+      .toLowerCase()
+      .replace(/\s/g, "")
+      }`;
+  };
+
   return (
-    <footer 
+    <footer
       ref={ref}
-      className="relative w-full bg-white pt-20 pb-8 px-18 border-t border-gray-400"
+      className="relative w-full bg-white pt-20 pb-8 px-18 border-t border-gray-400 font-sans"
     >
       {/* Subtle background elements */}
       {/* <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600"></div> */}
@@ -90,15 +97,21 @@ if(item=="Our Team"){
             {/* Logo */}
             <div className="mb-6">
               <div className="w-32 h-16 bg-blue-800 rounded-lg flex items-center justify-center">
-               <Image src="/its-logo.png" alt="ITS Logo" width={120} height={40} />
+                <Image
+                  src="/its-logo.png"
+                  alt="ITS Logo"
+                  width={120}
+                  height={40}
+                />
               </div>
             </div>
 
-            <motion.p 
+            <motion.p
               variants={itemVariants}
               className="text-gray-600 leading-relaxed mb-8 max-w-sm"
             >
-              #1 Publishing Software Provider in Asia, delivering cutting-edge tech enabled publishing solutions worldwide.
+              #1 Publishing Software Provider in Asia, delivering cutting-edge
+              tech enabled publishing solutions worldwide.
             </motion.p>
 
             {/* Contact Info */}
@@ -109,7 +122,7 @@ if(item=="Our Team"){
                 </div>
                 <span className="font-medium">+92-333977095</span>
               </div>
-              
+
               <div className="flex items-center gap-3 text-gray-600">
                 <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
                   <Clock className="w-4 h-4 text-blue-600" />
@@ -124,17 +137,18 @@ if(item=="Our Team"){
             <h3 className="text-lg font-bold text-gray-900 mb-2">Services</h3>
             <ul className="space-y-3">
               {services.map((service, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   variants={itemVariants}
                   custom={index}
                   className="group text-sm"
                 >
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
                   >
-                    <span>{service}</span>
+                    {/* MODIFICATION HERE: Using getServiceLink to ensure an absolute path */}
+                    <Link href={getServiceLink(service)}>{service}</Link>
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   </a>
                 </motion.li>
@@ -147,14 +161,14 @@ if(item=="Our Team"){
             <h3 className="text-lg font-bold text-gray-900 mb-6">Company</h3>
             <ul className="space-y-3">
               {company.map((item, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   variants={itemVariants}
                   custom={index}
                   className="group text-sm"
                 >
-                 <Link href={`/${getLink(item)}`}
-                  
+                  <Link
+                    href={`/${getLink(item)}`}
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
                   >
                     {item}
@@ -170,14 +184,14 @@ if(item=="Our Team"){
             <h3 className="text-lg font-bold text-gray-900 mb-6">Connect</h3>
             <ul className="space-y-3">
               {connect.map((item, index) => (
-                <motion.li 
+                <motion.li
                   key={index}
                   variants={itemVariants}
                   custom={index}
                   className="group text-sm"
                 >
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-600 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span>{item}</span>
@@ -198,9 +212,10 @@ if(item=="Our Team"){
         >
           <div className="items-center justify-between ">
             <p className="text-gray-600 text-center text-sm">
-             © {new Date().getFullYear()} ITS. All rights reserved. Founded 1994 • Trusted by 50+ global STM publishers.
+              © {new Date().getFullYear()} ITS. All rights reserved. Founded
+              1994 • Trusted by 50+ global STM publishers.
             </p>
-            
+
             {/* <div className="flex items-center gap-6">
               <motion.div
                 whileHover={{ scale: 1.05 }}

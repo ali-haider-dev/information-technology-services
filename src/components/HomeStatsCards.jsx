@@ -80,7 +80,7 @@ const StatsCards = () => {
   }
 
   return (
-    <div className="z-10 px-4 relative bg-white">
+    <div className="z-10 px-4 relative bg-white font-sans">
       <div className="max-w-[1030px] mx-auto relative z-10 -top-3">
         <motion.div
           variants={containerVariants}

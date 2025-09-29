@@ -33,7 +33,7 @@ const float = {
 
 const HomeHeroSection = () => {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center text-center overflow-hidden font-sans">
       {/* Background Video */}
       <video
         autoPlay

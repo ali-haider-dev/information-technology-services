@@ -68,7 +68,7 @@ const CareersSection = () => {
         ></div>
       </div> */}
 
-      <div className="relative max-w-7xl mx-auto pt-15 lg:pt-4">
+      <div className="relative max-w-7xl mx-auto pt-15 lg:pt-4 font-sans">
         <div className="grid md:grid-cols-2  items-center bg-white shadow-2xl px-6 rounded-2xl">
           {/* Left Content */}
           <motion.div
