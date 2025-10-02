@@ -7,6 +7,7 @@ import { useRef, useMemo } from "react";
 const ServiceCard = ({
   icon,
   title,
+  link,
   description,
   features = [],
   extraInfo = {},
@@ -180,7 +181,7 @@ const ServiceCard = ({
           href={`${
             isService
               ? "contact"
-              : `services/${title.toLowerCase().replace(/\s/g, "")}` 
+              : `services/${link}` 
           }`}
           className="relative z-10 flex items-center justify-center gap-2"
         >

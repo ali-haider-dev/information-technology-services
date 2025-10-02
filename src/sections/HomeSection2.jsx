@@ -1,7 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { Star, CreditCard, Smartphone, CheckCircle } from "lucide-react"; // Note: Only ArrowRight might be used if needed
-import Image from "next/image";
 import Link from "next/link";
 
 // Variants for reusable animations
@@ -15,21 +13,6 @@ const fadeInLeft = {
   visible: { opacity: 1, x: 0 },
 };
 
-const fadeInRight = {
-  hidden: { opacity: 0, x: 30 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const float = {
-  animate: {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-};
 
 const HomeHeroSection = () => {
   return (

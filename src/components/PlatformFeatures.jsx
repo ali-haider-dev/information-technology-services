@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { BookOpen, DollarSign, Users, ShieldCheck, Clock, BarChart2, Globe, Zap, CircleCheckBig, CreditCard, Lock, Cloud } from "lucide-react";
+import { BookOpen, DollarSign, Users, ShieldCheck, Clock, BarChart2, Globe, Zap, CircleCheckBig, CreditCard, Lock, Cloud, CodeXml,Layout, Smartphone, Bolt, Database, Eye, Target, Workflow } from "lucide-react";
 import React from 'react';
 
 // Map icon names (strings) to actual Lucide React components
@@ -12,11 +12,19 @@ const iconMap = {
   Production: Clock,
   Analytics: BarChart2,
   Global:Globe,
-  Financial:Zap,
+  Zap:Zap,
   DigitalContent:CircleCheckBig,
   Gateway:CreditCard,
   AccessControl:Lock,
-  API:Cloud
+  API:Cloud,
+  layout:Layout,
+  XML:CodeXml,
+  Mobile:Smartphone,
+  Detection:Zap,
+  DataBase:Database,
+  eye:Eye,
+  target:Target,
+  Workflow:Workflow
 };
 
 // --- Framer Motion Variants ---
@@ -44,7 +52,7 @@ const cardVariants = {
 };
 
 
-const PlatformFeatures = ({ title, modules=[] }) => {
+const PlatformFeatures = ({ title, modules=[],size,green }) => {
   return (
     <section className="w-full px-18 py-20 lg:py-24 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
@@ -53,12 +61,12 @@ const PlatformFeatures = ({ title, modules=[] }) => {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <div className="w-50 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto"></div>
+          <div className={`w-50 h-1 bg-gradient-to-r from-${green ? 'green':'orange'}-500 to-${green ? 'green':'orange'}-600 rounded-full mx-auto`}></div>
         </div>
 
         {/* Modules Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className={`grid grid-cols-1 md:grid-cols-2 ${modules.length >2 ? 'lg:grid-cols-3' :'lg:grid-cols-2'} gap-8`}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -81,13 +89,13 @@ const PlatformFeatures = ({ title, modules=[] }) => {
                     <IconComponent className="w-6 h-6" />
                   </div>
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-gray-900 mt-1">
+                  <h3 className={`${size ? 'text-sm' : 'text-lg'} font-semibold text-gray-900 mt-1`}>
                     {module.title}
                   </h3>
                 </div>
                 
                 {/* Description */}
-                <p className="text-gray-600 text-sm">
+                <p className={`text-gray-600 ${size ? 'text-xs': 'text-sm'}`}>
                   {module.description}
                 </p>
               </motion.div>

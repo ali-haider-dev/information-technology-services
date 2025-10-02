@@ -1,7 +1,6 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Lottie from "lottie-react";
 import WorldBusiness from "../components/lotties/WorldBusiness.json";
 import {
   Globe,
@@ -15,11 +14,18 @@ import {
   FileText,
 } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
+import dynamic from "next/dynamic";
+
+const AnimatedLottie = dynamic(() => import("lottie-react"), {
+  ssr: false, // Yeh client-side library hai
+  loading: () => <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>,
+});
 
 const services = [
   {
     icon: <Globe className="w-5 h-5 text-white" />,
     title: "Management ERP Systems",
+      link:"managementerpsystems",
     description:
       "Proprietary enterprise resource planning platform designed specifically for international publishers.",
     features: [
@@ -32,6 +38,7 @@ const services = [
   {
     icon: <ShoppingCart className="w-5 h-5 text-white" />,
     title: "E-Commerce & Payment Gateways",
+      link:"e-commerce&paymentgateways",
     description:
       "Proprietary payment processing platform with integrated e-commerce solutions for global publishers.",
     features: [
@@ -44,6 +51,7 @@ const services = [
   {
     icon: <Lock className="w-5 h-5 text-white" />,
     title: "Content Delivery & Access Control",
+      link:"contentdelivery&accesscontrol",
     description:
       "Advanced proprietary CDN platform with intelligent access control systems for digital publishing.",
     features: [
@@ -56,6 +64,7 @@ const services = [
   {
     icon: <Edit3 className="w-5 h-5 text-white" />,
     title: "AI-Powered Copy Editing",
+    link:"aicopyeditingplatform",
     description:
       "Proprietary AI-driven editing platform ensuring academic excellence through automated quality control.",
     features: [
@@ -69,6 +78,7 @@ const services = [
   {
     icon: <FileCode className="w-5 h-5 text-white" />,
     title: "Automated Typesetting & XML",
+      link:"automatedtypesetting&xml",
     description:
       "Proprietary automated typesetting engine with intelligent XML conversion for seamless publishing workflows.",
     features: [
@@ -82,6 +92,7 @@ const services = [
   {
     icon: <Search className="w-5 h-5 text-white" />,
     title: "Automated Reference Verification",
+      link:"intelligentreferenceverification",
     description:
       "Advanced AI-powered reference verification system with automated citation accuracy checking.",
     features: [
@@ -95,6 +106,7 @@ const services = [
   {
     icon: <Shield className="w-5 h-5 text-white" />,
     title: "Advanced AI Detection Platform",
+      link:"aiplagiarismdetection",
     description:
       "Proprietary multi-layered AI detection system with advanced plagiarism and content originality analysis.",
     features: [
@@ -108,6 +120,7 @@ const services = [
   {
     icon: <Image className="w-5 h-5 text-white" />,
     title: "AI-Enhanced Figure Processing",
+      link:"automatedfigureenhancement",
     description:
       "Proprietary AI-powered figure enhancement platform with automated quality optimization and formatting.",
     features: [
@@ -121,6 +134,7 @@ const services = [
   {
     icon: <FileText className="w-5 h-5 text-white" />,
     title: "Manuscript Processing Platform",
+      link:"proprietarymanuscriptplatform",
     description:
       "Complete proprietary manuscript processing platform with AI-driven workflow automation licensed globally.",
     features: [
@@ -207,7 +221,7 @@ export default function ServiceSection({isService}) {
         >
           <div className="relative">
             <div className="w-[300px] sm:w-[400px] md:w-[450px] h-[300px] sm:h-[400px] md:h-[450px] bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full flex items-center justify-center">
-              <Lottie
+              <AnimatedLottie
                 animationData={WorldBusiness}
                 loop
                 className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96"

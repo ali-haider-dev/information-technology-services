@@ -58,8 +58,8 @@ const ServiceHighlights = ({ highlights, pricing, onGetQuote }) => {
             >
               <div className="flex items-center gap-4">
                 {/* Icon: Primary color accent */}
-                <div className="w-12 h-12 bg-[#1c398e]/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <IconComponent className="w-6 h-6 text-[#1c398e] " />
+                <div className={`w-12 h-12 ${highlight.iconBg} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                  <IconComponent className={`w-6 h-6 ${highlight.iconColor} `} />
                 </div>
                 {/* Text */}
                 <span className="text-[#1c398e]/90 font-medium text-base">

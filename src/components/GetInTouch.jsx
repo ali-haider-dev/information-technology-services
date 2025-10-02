@@ -14,7 +14,7 @@ const GetInTouchSection = ({
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, {
-    delay: 0.2,
+    delay: 0.1,
     threshold: 0.5,
     once: true
   });
@@ -47,7 +47,7 @@ const GetInTouchSection = ({
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut",delay:0 }}
           className="mb-2"
         >
           <motion.div
@@ -67,7 +67,7 @@ const GetInTouchSection = ({
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
               className="block"
             >
               Ready to Transform Your Technology Infrastructure?
@@ -80,7 +80,7 @@ const GetInTouchSection = ({
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
           className="text-sm md:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12"
         >
           Join leading international publishers who trust our comprehensive SAAS
@@ -92,7 +92,7 @@ const GetInTouchSection = ({
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-          transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 150 }}
+          transition={{ delay: 0.5, duration: 0.6, type: "spring", stiffness: 150 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           {/* Primary Button */}
@@ -134,7 +134,7 @@ const GetInTouchSection = ({
               onClick={onSecondaryClick}
               initial={{ opacity: 0, x: 20 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-              transition={{ delay: 1, duration: 0.6 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="group px-4 py-4 border-2 border-blue-400/50 text-white font-medium rounded-xl hover:border-blue-400 hover:text-blue-200 hover:bg-blue-400/10 transition-all duration-300 backdrop-blur-sm"

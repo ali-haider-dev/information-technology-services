@@ -8,8 +8,6 @@ import {
   CheckCircle, 
   ArrowRight,
   Zap,
-  Target,
-  Settings
 } from "lucide-react";
 
 const TechnologyProcessSection = () => {
