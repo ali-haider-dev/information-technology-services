@@ -1,37 +1,52 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react" // for hamburger icons
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react"; // for hamburger icons
+import Image from "next/image";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = ""
-    }
-  }, [isOpen])
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <header className="fixed top-0  md:mx-16 z-50 mt-10 bg-white   w-[90vw] rounded-2xl shadow-xl py-2 font-sans">
-      <div className={`mx-auto h-16 flex max-w-7xl items-center justify-between px-6 py-4 ${isOpen ? "hidden" : ""}`}>
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 bg-[#1c398e] rounded-2xl">
-          <div className=" flex items-center justify-center p-4">
-            <Image src={"/its-logo.png"} width={100} height={80} alt="ITS Logo" priority />
-          </div>
+      <div
+        className={`mx-auto h-16 flex max-w-7xl items-center justify-between px-6 py-4 ${
+          isOpen ? "hidden" : ""
+        }`}
+      >
+        {/*ITS Logo */}
+        <Link
+          href="/"
+          className="flex items-center justify-center bg-[#1c398e] rounded-2xl w-40 h-15"
+        >
+          <Image
+            src={"/its-logo.png"}
+            width={100}
+            height={80}
+            alt="ITS Logo"
+            priority
+            className="w-auto h-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-[#1c398e] font-medium" role="navigation">
+        <nav
+          className="hidden md:flex items-center gap-8 text-[#1c398e] font-medium"
+          role="navigation"
+        >
           {["Services", "About", "Contact"].map((item) => (
             <Link
               key={item}
@@ -75,10 +90,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <Link href="/" className="flex items-center gap-3">
             <div className="rounded-lg flex items-center justify-center p-4 bg-[#1c398e] border border-white">
-              <Image src={"/its-logo.png"} width={100} height={80} alt="ITS Logo" />
+              <Image
+                src={"/its-logo.png"}
+                width={100}
+                height={80}
+                alt="ITS Logo"
+              />
             </div>
           </Link>
-          <button className="text-[#1c398e]  transition" onClick={() => setIsOpen(false)}>
+          <button
+            className="text-[#1c398e]  transition"
+            onClick={() => setIsOpen(false)}
+          >
             <X size={30} />
           </button>
         </div>
@@ -110,7 +133,12 @@ export default function Navbar() {
       </div>
 
       {/* Overlay (click to close) */}
-      {isOpen && <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30" onClick={() => setIsOpen(false)} />}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </header>
-  )
+  );
 }

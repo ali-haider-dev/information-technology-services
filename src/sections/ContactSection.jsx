@@ -72,7 +72,7 @@ console.log("Errors",state?.errors)
         <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
           {/* Left Side - Text Content */}
           <motion.div
-            className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-40 sm:-mt-30"
+            className="text-left w-full lg:w-1/2 mb-12 lg:mb-0 lg:-mt-40 sm:-mt-20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
