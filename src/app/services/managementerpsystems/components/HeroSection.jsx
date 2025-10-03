@@ -2,47 +2,27 @@
 import { motion } from "framer-motion";
 import {
   Settings,
-  Cloud,
-  BarChart3,
-  Zap,
-  Shield,
-  Globe,
   ArrowRight,
-  CheckCircle,
 } from "lucide-react";
-import Lottie from "lottie-react";
-import ERPSYSTEM from "../../../../components/lotties/ERP.json";
+import dynamic from 'next/dynamic';
+const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
+  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
+  ssr: false, 
+});
 
+const LottieVisual = () => {
+
+  const ERPSYSTEM = require('../../../../components/lotties/ERP.json');
+  
+  return (
+    <DynamicLottiePlayer
+      animationData={ERPSYSTEM}
+      loop
+      className="w-full h-full"
+    />
+  );
+};
 const HeroSection = () => {
-  const features = [
-    {
-      icon: Cloud,
-      text: "Cloud-Based Architecture",
-      color: "bg-blue-100 text-blue-600",
-    },
-    {
-      icon: BarChart3,
-      text: "Real-Time Analytics",
-      color: "bg-green-100 text-green-600",
-    },
-    {
-      icon: Shield,
-      text: "Enterprise Security",
-      color: "bg-purple-100 text-purple-600",
-    },
-    {
-      icon: Globe,
-      text: "Global Scalability",
-      color: "bg-orange-100 text-orange-600",
-    },
-  ];
-
-  const stats = [
-    { number: "99.9%", label: "Uptime Guarantee" },
-    { number: "500+", label: "Publishers Served" },
-    { number: "24/7", label: "Support Available" },
-  ];
-
   const headerVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
@@ -198,11 +178,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <Lottie
-                animationData={ERPSYSTEM}
-                loop
-                className="w-full h-full"
-              />
+               <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

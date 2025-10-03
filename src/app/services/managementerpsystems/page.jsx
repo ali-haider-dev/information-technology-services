@@ -1,7 +1,11 @@
 import React from 'react'
 import HeroSection from './components/HeroSection'
 import PlatformFeatures from "../../../components/PlatformFeatures"
-import ImplementationProcess from './components/ImplementationProcess';
+import dynamic from 'next/dynamic';
+
+import ImplementationProcessWrapper from './components/Implementationwrapper'; 
+
+
 const page = () => {
 
 const coreModulesData = [
@@ -41,7 +45,7 @@ const coreModulesData = [
     <>
     <HeroSection/>
     <PlatformFeatures title="Platform Features" modules={coreModulesData}/>
-    <ImplementationProcess/>
+    <ImplementationProcessWrapper/>
     </>
   )
 }

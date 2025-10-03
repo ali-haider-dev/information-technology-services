@@ -2,17 +2,27 @@
 import { motion } from "framer-motion";
 import {
   Settings,
-  Cloud,
-  BarChart3,
-  Zap,
-  Shield,
-  Globe,
   ArrowRight,
-  CheckCircle,
 } from "lucide-react";
-import Lottie from "lottie-react";
-import PaymentGateway from "../../../../components/lotties/PaymentGateway.json";
 
+import dynamic from 'next/dynamic';
+const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
+  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
+  ssr: false, 
+});
+
+const LottieVisual = () => {
+
+  const PaymentGateway = require('../../../../components/lotties/PaymentGateway.json');
+  
+  return (
+    <DynamicLottiePlayer
+      animationData={PaymentGateway}
+      loop
+      className="w-full h-full"
+    />
+  );
+};
 const HeroSection = () => {
 
   const headerVariants = {
@@ -156,11 +166,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <Lottie
-                animationData={PaymentGateway}
-                loop
-                className="w-full h-full"
-              />
+            <LottieVisual/>
             </motion.div>
 
             {/* Floating decorative elements around animation */}

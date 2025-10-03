@@ -1,17 +1,30 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Settings,
- 
-  ArrowRight,
+import { Settings, ArrowRight } from "lucide-react";
 
-} from "lucide-react";
-import Lottie from "lottie-react";
-import referenceCheck from "../../../../components/lotties/referenceCheck.json";
+import dynamic from "next/dynamic";
+const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
+      Loading Animation...
+    </div>
+  ),
+  ssr: false,
+});
+
+const LottieVisual = () => {
+  const referenceCheck = require("../../../../components/lotties/referenceCheck.json");
+
+  return (
+    <DynamicLottiePlayer
+      animationData={referenceCheck}
+      loop
+      className="w-full h-full"
+    />
+  );
+};
 
 const HeroSection = () => {
-
-
   const headerVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
@@ -47,8 +60,6 @@ const HeroSection = () => {
       },
     },
   };
-
-
 
   return (
     <section className="relative w-full px-18 pt-40 md:pt-24  lg:px-20  bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
@@ -87,7 +98,7 @@ const HeroSection = () => {
             >
               <Settings className="w-4 h-4 text-[#1c398e]" />
               <span className="text-[#1c398e] text-xs font-medium">
-               Proprietary AI Detection Platform
+                Proprietary AI Detection Platform
               </span>
             </motion.div>
 
@@ -96,9 +107,9 @@ const HeroSection = () => {
               className="text-xl sm:text-2xl  lg:text-4xl font-bold text-gray-900 mb-6 "
               variants={headerVariants}
             >
-              <span>Plagiarism &   </span>
+              <span>Plagiarism & </span>
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-              Ai Detection
+                Ai Detection
               </span>
             </motion.h1>
 
@@ -107,7 +118,11 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md text-gray-600 leading-relaxed mb-8">
-         Protect academic integrity with our proprietary AI-powered detection platform. Our advanced machine learning algorithms and comprehensive database screening technology ensure originality verification and maintain scholarly standards through cutting-edge automated analysis across all academic disciplines.
+              Protect academic integrity with our proprietary AI-powered
+              detection platform. Our advanced machine learning algorithms and
+              comprehensive database screening technology ensure originality
+              verification and maintain scholarly standards through cutting-edge
+              automated analysis across all academic disciplines.
             </p>
 
             {/* CTA Button */}
@@ -154,11 +169,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <Lottie
-                animationData={referenceCheck}
-                loop
-                className="w-full h-full"
-              />
+              <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

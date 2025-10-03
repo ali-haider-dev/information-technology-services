@@ -1,7 +1,7 @@
 import React from 'react'
 import HeroSection from './components/HeroSection'
 import PlatformFeatures from "../../../components/PlatformFeatures"
-import ImplementationProcess from './components/ImplementationProcess';
+import ImplementationProcessWrapper from './components/Implementationwrapper';
 
 
 const page = () => {
@@ -23,7 +23,7 @@ const coreModulesData = [
     <>
     <HeroSection/>
     <PlatformFeatures title="AI-Powered Detection Capabilities" modules={coreModulesData} size/>
-    <ImplementationProcess/>
+    <ImplementationProcessWrapper/>
     </>
   )
 }

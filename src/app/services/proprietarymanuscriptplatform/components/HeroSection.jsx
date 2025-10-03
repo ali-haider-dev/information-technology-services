@@ -4,6 +4,25 @@ import { Settings, ArrowRight } from "lucide-react";
 import Lottie from "lottie-react";
 import Scripting from "../../../../components/lotties/Scripting.json";
 
+import dynamic from 'next/dynamic';
+const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
+  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
+  ssr: false, 
+});
+
+const LottieVisual = () => {
+
+  const Scripting = require('../../../../components/lotties/Scripting.json');
+  
+  return (
+    <DynamicLottiePlayer
+      animationData={Scripting}
+      loop
+      className="w-full h-full"
+    />
+  );
+};
+
 const HeroSection = () => {
   const headerVariants = {
     hidden: { opacity: 0, y: -30 },
@@ -148,11 +167,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <Lottie
-                animationData={Scripting}
-                loop
-                className="w-full h-full"
-              />
+              <LottieVisual  />
             </motion.div>
 
             {/* Floating decorative elements around animation */}
