@@ -4,6 +4,41 @@ import PlatformFeatures from "../../../components/PlatformFeatures"
 import ImplementationProcessWrapper from './components/Implementationwrapper';
 
 
+
+// Automated Typesetting & XML Page Metadata
+export const metadata = {
+  title: "Automated Typesetting & XML Conversion",
+  
+  description:
+    "Information Technology Services offers rapid and accurate automated typesetting and XML conversion. Transform manuscripts into professional print and digital formats instantly.",
+  
+  keywords: [
+    "Automated Typesetting",
+    "XML Conversion",
+    "Content Formatting Services",
+    "Digital Publishing Solutions",
+    "JATS XML",
+    "ITS Typesetting"
+  ],
+
+  openGraph: {
+    title: "Rapid Automated Typesetting and Publishing XML Conversion by ITS",
+    description: "Achieve multi-format output (PDF, EPUB, XML) from a single source using our efficient automation technology.",
+    type: "website",
+    url: "https://information-technology-services.vercel.app/services/automatedtypesetting&xml",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Automated Typesetting & XML | Information Technology Services",
+    description: "Convert manuscripts to ready-to-publish formats like XML and PDF with high speed and precision.",
+  },
+
+  alternates: {
+    canonical: "https://information-technology-services.vercel.app/services/automatedtypesetting&xml",
+  },
+};
+
 const page = () => {
 
 const coreModulesData = [
