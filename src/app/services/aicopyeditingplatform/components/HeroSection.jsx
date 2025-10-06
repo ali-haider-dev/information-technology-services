@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Settings, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
   loading: () => (
     <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
@@ -147,7 +148,10 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={"/contact"} className="text-lg">
+                Request Quote
+              </Link>
+
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{

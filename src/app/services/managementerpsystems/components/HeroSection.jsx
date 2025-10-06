@@ -5,6 +5,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import dynamic from 'next/dynamic';
+import Link from "next/link";
 const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
   loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
   ssr: false, 
@@ -55,18 +56,6 @@ const HeroSection = () => {
       transition: {
         duration: 0.8,
         delay: 0.4,
-      },
-    },
-  };
-
-  const featureVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.1,
       },
     },
   };
@@ -143,7 +132,7 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={'/contact'} className="text-lg">Request Demo</Link>
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{

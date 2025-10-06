@@ -25,6 +25,14 @@ export const metadata = {
       "Take control of your editorial process with a high-security, scalable submission and peer review system.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/proprietarymanuscriptplatform",
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

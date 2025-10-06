@@ -1,6 +1,6 @@
 import SupportSection from "../../sections/SupportSection";
 import React from "react";
-import SupportCard from './components/SupportCards'
+import SupportCard from "./components/SupportCards";
 import FAQSection from "./components/FAQSection";
 export const metadata = {
   title: "Technical Support & Help Center",
@@ -24,9 +24,14 @@ export const metadata = {
       "Access our knowledge base, submit a ticket, or contact our 24/7 technical support team for immediate assistance.",
     type: "website",
     url: "https://information-technology-services.vercel.app/support",
-    // images: [{
-    //   url: 'https://information-technology-services.vercel.app/images/support-social.jpg', //
-    // }],
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {
@@ -44,8 +49,8 @@ const page = () => {
   return (
     <>
       <SupportSection />
-      <SupportCard/>
-      <FAQSection/>
+      <SupportCard />
+      <FAQSection />
     </>
   );
 };

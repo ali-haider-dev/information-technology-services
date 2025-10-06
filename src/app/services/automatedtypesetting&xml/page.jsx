@@ -26,6 +26,14 @@ export const metadata = {
     description: "Achieve multi-format output (PDF, EPUB, XML) from a single source using our efficient automation technology.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/automatedtypesetting&xml",
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

@@ -1,21 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Settings,
-  ArrowRight,
-} from "lucide-react";
+import { Settings, ArrowRight } from "lucide-react";
 
-
-import dynamic from 'next/dynamic';
-const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
-  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
-  ssr: false, 
+import dynamic from "next/dynamic";
+import Link from "next/link";
+const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
+      Loading Animation...
+    </div>
+  ),
+  ssr: false,
 });
 
 const LottieVisual = () => {
+  const AccessControl = require("../../../../components/lotties/AccessControl.json");
 
-  const AccessControl = require('../../../../components/lotties/AccessControl.json');
-  
   return (
     <DynamicLottiePlayer
       animationData={AccessControl}
@@ -25,7 +25,6 @@ const LottieVisual = () => {
   );
 };
 const HeroSection = () => {
-
   const headerVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
@@ -61,7 +60,6 @@ const HeroSection = () => {
       },
     },
   };
-
 
   return (
     <section className="relative w-full px-18 pt-40 lg:pt-30 md:pt-24   lg:px-20  bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
@@ -109,7 +107,9 @@ const HeroSection = () => {
               className="text-xl sm:text-2xl  lg:text-3xl font-bold  "
               variants={headerVariants}
             >
-              <span className="bg-gradient-to-r from-[#1c398e] to-blue-600 mb-6 bg-clip-text text-transparent">Content Delivery </span>
+              <span className="bg-gradient-to-r from-[#1c398e] to-blue-600 mb-6 bg-clip-text text-transparent">
+                Content Delivery{" "}
+              </span>
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                 & Access Control
               </span>
@@ -120,7 +120,10 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md text-gray-600 leading-relaxed mb-8">
-             Secure, scalable content delivery network with advanced access control systems for academic and professional publishers. Protect your intellectual property while providing seamless access to authorized users worldwide.
+              Secure, scalable content delivery network with advanced access
+              control systems for academic and professional publishers. Protect
+              your intellectual property while providing seamless access to
+              authorized users worldwide.
             </p>
 
             {/* CTA Button */}
@@ -132,7 +135,10 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={"/contact"} className="text-lg">
+                Request Demo
+              </Link>
+
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{
@@ -167,8 +173,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <LottieVisual
-              />
+              <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

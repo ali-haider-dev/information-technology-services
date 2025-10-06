@@ -2,17 +2,16 @@ import HomeHeroSection from "../sections/HomeSection2";
 import HomeStatsCards from "../components/HomeStatsCards";
 import dynamic from "next/dynamic";
 
-
 const ServiceSection = dynamic(() => import("../sections/ServiceSection"), {
   loading: () => null,
 });
 
 const GetInTouchSection = dynamic(() => import("../components/GetInTouch"), {
-  loading: () => null, 
+  loading: () => null,
 });
 
 export const metadata = {
-  title: 'ITS | Leading Academic Publishing Services',
+  title: "ITS | Leading Academic Publishing Services",
   description:
     "Information Technology Services provides specialized AI, ERP, and bespoke software development solutions for international publishers and academic institutions. Automate workflows and ensure content quality.",
 
@@ -32,9 +31,14 @@ export const metadata = {
       "Transform your editorial and production workflows with bespoke AI and ERP systems from Information Technology Services.",
     type: "website",
     url: "https://information-technology-services.vercel.app/",
-    // images: [{
-    //   url: 'https://information-technology-services.vercel.app/images/homepage-social.jpg',
-    // }],
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

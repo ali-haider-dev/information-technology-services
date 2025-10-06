@@ -24,9 +24,14 @@ export const metadata = {
       "Deploy a robust AI solution for accurate and fast content verification across vast databases.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/aiplagiarismdetection",
-    // images: [{
-    //   url: 'https://information-technology-services.vercel.app/images/plagiarism-social.jpg',
-    // }],
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

@@ -25,9 +25,14 @@ export const metadata = {
       "Achieve high accuracy and speed with our scalable AI platform designed for the copy editing needs of international publishing houses.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/aicopyeditingplatform",
-    // images: [{
-    //   url: 'https://informationtechnologyservices.com/images/ai-copy-editing-social.jpg',
-    // }],
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

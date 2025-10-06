@@ -1,27 +1,23 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Settings,
-  ArrowRight,
+import { Settings, ArrowRight } from "lucide-react";
 
-} from "lucide-react";
-
-import dynamic from 'next/dynamic';
-const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
-  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
-  ssr: false, 
+import dynamic from "next/dynamic";
+import Link from "next/link";
+const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
+      Loading Animation...
+    </div>
+  ),
+  ssr: false,
 });
 
 const LottieVisual = () => {
+  const XML = require("../../../../components/lotties/XML.json");
 
-  const XML = require('../../../../components/lotties/XML.json');
-  
   return (
-    <DynamicLottiePlayer
-      animationData={XML}
-      loop
-      className="w-full h-full"
-    />
+    <DynamicLottiePlayer animationData={XML} loop className="w-full h-full" />
   );
 };
 
@@ -111,7 +107,7 @@ const HeroSection = () => {
             >
               <Settings className="w-4 h-4 text-[#1c398e]" />
               <span className="text-[#1c398e] text-xs font-medium">
-               AI-Powered Layout Platform
+                AI-Powered Layout Platform
               </span>
             </motion.div>
 
@@ -120,9 +116,9 @@ const HeroSection = () => {
               className="text-xl sm:text-2xl  lg:text-4xl font-bold text-gray-900 mb-6 "
               variants={headerVariants}
             >
-              <span>Type Setting &  </span>
+              <span>Type Setting & </span>
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-              XML Conversion
+                XML Conversion
               </span>
             </motion.h1>
 
@@ -131,7 +127,11 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md text-gray-600 leading-relaxed mb-8">
-            Transform your manuscripts into publication-ready formats with our proprietary AI-powered typesetting platform and automated XML conversion technology. Our intelligent software solutions ensure your content meets the highest standards for digital and print publishing across all major platforms.
+              Transform your manuscripts into publication-ready formats with our
+              proprietary AI-powered typesetting platform and automated XML
+              conversion technology. Our intelligent software solutions ensure
+              your content meets the highest standards for digital and print
+              publishing across all major platforms.
             </p>
 
             {/* CTA Button */}
@@ -143,7 +143,10 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={"/contact"} className="text-lg">
+                Request Demo
+              </Link>
+
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{
@@ -178,7 +181,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <LottieVisual  />
+              <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

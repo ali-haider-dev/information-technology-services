@@ -24,6 +24,14 @@ export const metadata = {
     description: "Speed up peer review and production by instantly verifying reference data and integrity.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/intelligentreferenceverification",
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

@@ -26,9 +26,14 @@ export const metadata = {
       "Discover ITS's commitment to innovation and quality in serving the complex needs of international publishers.",
     type: "website",
     url: "https://information-technology-services.vercel.app/about",
-    // images: [{
-    //   url: 'https://information-technology-services.vercel.app/images/about-us-social.jpg', // Team photo ya building ki image
-    // }],
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

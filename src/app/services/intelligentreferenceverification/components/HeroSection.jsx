@@ -1,21 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Settings,
- 
-  ArrowRight,
-
-} from "lucide-react";
-import dynamic from 'next/dynamic';
-const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
-  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
-  ssr: false, 
+import { Settings, ArrowRight } from "lucide-react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
+      Loading Animation...
+    </div>
+  ),
+  ssr: false,
 });
 
 const LottieVisual = () => {
+  const referenceCheck = require("../../../../components/lotties/referenceCheck.json");
 
-  const referenceCheck = require('../../../../components/lotties/referenceCheck.json');
-  
   return (
     <DynamicLottiePlayer
       animationData={referenceCheck}
@@ -61,8 +60,6 @@ const HeroSection = () => {
       },
     },
   };
-
-
 
   return (
     <section className="relative w-full px-18 pt-40 md:pt-24  lg:px-20  bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
@@ -110,9 +107,9 @@ const HeroSection = () => {
               className="text-xl sm:text-2xl  lg:text-4xl font-bold text-gray-900 mb-6 "
               variants={headerVariants}
             >
-              <span>Reference   </span>
+              <span>Reference </span>
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-              Checking
+                Checking
               </span>
             </motion.h1>
 
@@ -121,7 +118,12 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md text-gray-600 leading-relaxed mb-8">
-            Ensure the accuracy and credibility of your scholarly work with our proprietary AI-powered reference verification platform. Our intelligent system, backed by 200+ research specialists, automatically verifies citations, validates sources, and optimizes bibliographies to meet the highest academic standards using advanced machine learning algorithms.
+              Ensure the accuracy and credibility of your scholarly work with
+              our proprietary AI-powered reference verification platform. Our
+              intelligent system, backed by 200+ research specialists,
+              automatically verifies citations, validates sources, and optimizes
+              bibliographies to meet the highest academic standards using
+              advanced machine learning algorithms.
             </p>
 
             {/* CTA Button */}
@@ -133,7 +135,10 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={"/contact"} className="text-lg">
+                Verify Reference
+              </Link>
+
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{
@@ -168,7 +173,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-             <LottieVisual />
+              <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

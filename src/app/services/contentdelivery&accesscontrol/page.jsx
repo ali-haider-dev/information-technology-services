@@ -24,6 +24,14 @@ export const metadata = {
       "Manage user permissions, subscriptions, and secure content distribution from a centralized platform.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/contentdelivery&accesscontrol",
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

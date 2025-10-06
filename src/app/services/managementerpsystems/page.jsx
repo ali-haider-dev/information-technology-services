@@ -24,6 +24,14 @@ export const metadata = {
     description: "Comprehensive enterprise resource planning solutions designed specifically to manage the complexities of international publishing.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/managementerpsystems",
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

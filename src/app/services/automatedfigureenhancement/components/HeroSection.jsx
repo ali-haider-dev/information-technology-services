@@ -1,19 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Settings,
-  ArrowRight,
-} from "lucide-react";
-import dynamic from 'next/dynamic';
-const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
-  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
-  ssr: false, 
+import { Settings, ArrowRight } from "lucide-react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
+      Loading Animation...
+    </div>
+  ),
+  ssr: false,
 });
 
 const LottieVisual = () => {
+  const GraphicsDesign = require("../../../../components/lotties/GraphicsDesign.json");
 
-  const GraphicsDesign = require('../../../../components/lotties/GraphicsDesign.json');
-  
   return (
     <DynamicLottiePlayer
       animationData={GraphicsDesign}
@@ -60,8 +61,6 @@ const HeroSection = () => {
     },
   };
 
-
-
   return (
     <section className="relative w-full px-18 pt-40 md:pt-24  lg:px-20  bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
       {/* Background decorative elements */}
@@ -99,7 +98,7 @@ const HeroSection = () => {
             >
               <Settings className="w-4 h-4 text-[#1c398e]" />
               <span className="text-[#1c398e] text-xs font-medium">
-               Visual Excellence
+                Visual Excellence
               </span>
             </motion.div>
 
@@ -108,8 +107,7 @@ const HeroSection = () => {
               className="text-xl sm:text-2xl  lg:text-4xl font-bold text-gray-900 mb-6 "
               variants={headerVariants}
             >
-              <span className="text-black">Figure Improvement   </span>
-            
+              <span className="text-black">Figure Improvement </span>
             </motion.h1>
 
             {/* Accent line */}
@@ -117,7 +115,11 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md text-gray-600 leading-relaxed mb-8">
-        Enhance the visual impact of your scientific figures with our professional improvement services. Our team of 100+ graphic specialists transforms charts, diagrams, and illustrations into publication-ready visuals that meet the highest scientific and aesthetic standards.
+              Enhance the visual impact of your scientific figures with our
+              professional improvement services. Our team of 100+ graphic
+              specialists transforms charts, diagrams, and illustrations into
+              publication-ready visuals that meet the highest scientific and
+              aesthetic standards.
             </p>
 
             {/* CTA Button */}
@@ -129,7 +131,10 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={"/contact"} className="text-lg">
+                Improve My Figures
+              </Link>
+
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{
@@ -164,7 +169,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <LottieVisual/>
+              <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

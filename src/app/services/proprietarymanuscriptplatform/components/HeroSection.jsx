@@ -4,16 +4,20 @@ import { Settings, ArrowRight } from "lucide-react";
 import Lottie from "lottie-react";
 import Scripting from "../../../../components/lotties/Scripting.json";
 
-import dynamic from 'next/dynamic';
-const DynamicLottiePlayer = dynamic(() => import('lottie-react'), {
-  loading: () => <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">Loading Animation...</div>,
-  ssr: false, 
+import dynamic from "next/dynamic";
+import Link from "next/link";
+const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
+      Loading Animation...
+    </div>
+  ),
+  ssr: false,
 });
 
 const LottieVisual = () => {
+  const Scripting = require("../../../../components/lotties/Scripting.json");
 
-  const Scripting = require('../../../../components/lotties/Scripting.json');
-  
   return (
     <DynamicLottiePlayer
       animationData={Scripting}
@@ -120,7 +124,11 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md text-gray-600 leading-relaxed mb-8">
-            Experience our cutting-edge proprietary manuscript processing system, licensed by 50+ leading global STM publishers. This comprehensive platform streamlines the entire publication workflow with automated quality assurance, real-time tracking, and seamless publisher integration.
+              Experience our cutting-edge proprietary manuscript processing
+              system, licensed by 50+ leading global STM publishers. This
+              comprehensive platform streamlines the entire publication workflow
+              with automated quality assurance, real-time tracking, and seamless
+              publisher integration.
             </p>
 
             {/* CTA Button */}
@@ -132,7 +140,10 @@ const HeroSection = () => {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="text-lg">Request Demo</span>
+              <Link href={"/contact"} className="text-lg">
+                Request Demo
+              </Link>
+
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{
@@ -167,7 +178,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              <LottieVisual  />
+              <LottieVisual />
             </motion.div>
 
             {/* Floating decorative elements around animation */}

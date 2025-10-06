@@ -24,6 +24,14 @@ export const metadata = {
     description: "Build a reliable online store with multi-currency support and secure transaction handling for publishing houses.",
     type: "website",
     url: "https://information-technology-services.vercel.app/services/e-commerce&paymentgateways",
+    images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   twitter: {

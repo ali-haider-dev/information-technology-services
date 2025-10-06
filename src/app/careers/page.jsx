@@ -29,9 +29,14 @@ export const metadata = {
       "Join our fast-growing team and contribute to cutting-edge publishing and academic technology solutions.",
     type: "website",
     url: "https://information-technology-services.vercel.app/careers", 
-    // images: [{
-    //   url: 'https://information-technology-services.vercel.app/images/careers-social.jpg', // Office environment ya team ki image
-    // }],
+      images: [
+      {
+        url: "/its-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Information Technology Services",
+      },
+    ],
   },
 
   

@@ -1,31 +1,39 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-
 const ServiceSection = dynamic(() => import("../../sections/ServiceSection"), {
-  loading: () => <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>,
+  loading: () => (
+    <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>
+  ),
 });
 
-const TechnologyProcessSection = dynamic(() => import("./TechnologyProcessSection"), {
-    loading: () => <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>,
-});
-
+const TechnologyProcessSection = dynamic(
+  () => import("./TechnologyProcessSection"),
+  {
+    loading: () => (
+      <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>
+    ),
+  }
+);
 
 const GetInTouchSection = dynamic(() => import("../../components/GetInTouch"), {
-  loading: () => <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>,
+  loading: () => (
+    <div className="w-64 h-64 bg-gray-200 rounded-full animate-pulse"></div>
+  ),
 });
+
+
 const page = () => {
   return (
     <>
-     <section className="pt-12">
-      <ServiceSection isService />
-    </section>
+      <section className="pt-12">
+        <ServiceSection isService />
+      </section>
 
       <TechnologyProcessSection />
-      
-      <GetInTouchSection showSecondaryButton/>
+
+      <GetInTouchSection showSecondaryButton />
     </>
-   
   );
 };
 
