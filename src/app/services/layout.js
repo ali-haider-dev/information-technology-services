@@ -42,8 +42,8 @@ export const metadata = {
 
 export default function ServicesLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+
+     children
+
   );
 }
