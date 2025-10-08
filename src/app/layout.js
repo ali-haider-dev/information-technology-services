@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { SiteLoader } from "../components/SiteLoader.jsx";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${sans.variable} `}>
+      <SpeedInsights/>
         <SiteLoader>
           <Navbar />
           {children}
