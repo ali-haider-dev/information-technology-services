@@ -3,26 +3,63 @@ import { motion } from "framer-motion";
 import { Settings, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-const DynamicLottiePlayer = dynamic(() => import("lottie-react"), {
-  loading: () => (
-    <div className="w-full h-full bg-gray-100 rounded-xl animate-pulse">
-      Loading Animation...
-    </div>
-  ),
-  ssr: false,
-});
+import { memo, useEffect, useState } from "react";
 
-const LottieVisual = () => {
-  const GraphicsDesign = require("../../../../components/lotties/GraphicsDesign.json");
+const DynamicLottiePlayer = dynamic(
+  () =>
+    import("lottie-react").then((mod) => ({
+      default: memo(({ animationData, loop, className }) => {
+        const LottieComponent = mod.default;
+        return (
+          <LottieComponent
+            animationData={animationData}
+            loop={loop}
+            className={className}
+            // Performance optimizations
+            rendererSettings={{
+              preserveAspectRatio: "xMidYMid",
+              progressiveLoad: true,
+              hideOnTransparent: true,
+            }}
+          />
+        );
+      }),
+    })),
+  {
+    loading: () => (
+      <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-[#1c398e] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    ),
+    ssr: false,
+  }
+);
+
+const LottieVisual = memo(() => {
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    import("../../../../components/lotties/GraphicsDesign.json")
+      .then((data) => setAnimationData(data.default || data))
+      .catch((err) => console.error("Failed to load animation:", err));
+  }, []);
+
+  if (!animationData) {
+    return (
+      <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl animate-pulse" />
+    );
+  }
 
   return (
     <DynamicLottiePlayer
-      animationData={GraphicsDesign}
+      animationData={animationData}
       loop
       className="w-full h-full"
     />
   );
-};
+});
+
+LottieVisual.displayName = "LottieVisual";
 
 const HeroSection = () => {
   const headerVariants = {

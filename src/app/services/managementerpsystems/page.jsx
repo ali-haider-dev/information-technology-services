@@ -1,7 +1,16 @@
 import React from 'react'
-import HeroSection from './components/HeroSection'
-import PlatformFeatures from "../../../components/PlatformFeatures"
-import ImplementationProcessWrapper from './components/Implementationwrapper'; 
+import dynamic from 'next/dynamic';
+const HeroSection = dynamic(() => import('./components/HeroSection'), {
+  loading: () => <div className="h-screen bg-gradient-to-br from-white via-blue-50/30 to-white" />
+});
+
+const PlatformFeatures = dynamic(() => import("../../../components/PlatformFeatures"), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />
+});
+
+const ImplementationProcessWrapper = dynamic(() => import('./components/Implementationwrapper'), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />
+});
 
 // Management ERP Systems Page Metadata
 export const metadata = {
