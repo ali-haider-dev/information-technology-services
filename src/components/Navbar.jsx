@@ -21,7 +21,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="fixed top-0  md:mx-16 z-50 mt-10 bg-white   w-[90vw] rounded-2xl shadow-xl py-2 font-sans">
+    <header className=" -z-10 bg-white    rounded-2xl shadow-xl py-2 font-sans">
       <div
         className={`mx-auto h-16 flex max-w-7xl items-center justify-between px-6 py-4 ${
           isOpen ? "hidden" : ""
