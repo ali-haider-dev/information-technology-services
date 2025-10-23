@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HelpCircle, ChevronDown, Headphones, ArrowRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 const FAQPage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -171,7 +172,9 @@ const FAQPage = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-[#1c398e] px-10 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all inline-flex items-center gap-2"
               >
-                Contact Support
+                <Link href="/contact" className="">
+                  Contact Support</Link>
+              
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
             </div>

@@ -23,24 +23,23 @@ const ServiceCard = ({
   });
 
   // Memoize gradient to prevent recalculation
-  const gradients = useMemo(
-    () => [
-      "from-blue-500 via-blue-600 to-indigo-700",
-      "from-purple-500 via-purple-600 to-pink-700",
-      "from-green-500 via-emerald-600 to-teal-700",
-      "from-orange-500 via-red-500 to-pink-600",
-      "from-indigo-500 via-purple-600 to-blue-700",
-      "from-teal-500 via-cyan-600 to-blue-700",
-      "from-pink-500 via-rose-600 to-red-700",
-      "from-yellow-500 via-orange-600 to-red-700",
-      "from-cyan-500 via-blue-600 to-indigo-700",
-    ],
-    []
-  );
+  // const gradients = useMemo(
+  // 	() => [
+  // 	 	"bg[#F0F9FF]",
+  // 	 	"from-purple-500 via-purple-600 to-pink-700",
+  // 	 	"from-green-500 via-emerald-600 to-teal-700",
+  // 	 	"from-orange-500 via-red-500 to-pink-600",
+  // 	 	"from-indigo-500 via-purple-600 to-blue-700",
+  // 	 	"from-teal-500 via-cyan-600 to-blue-700",
+  // 	 	"from-pink-500 via-rose-600 to-red-700",
+  // 	 	"from-yellow-500 via-orange-600 to-red-700",
+  // 	 	"from-cyan-500 via-blue-600 to-indigo-700",
+  // 	],
+  // 	[]
+  // );
 
-  const currentGradient = gradients[index % gradients.length];
+  // const currentGradient = gradients[index % gradients.length];
 
-  
   const cardVariants = {
     hidden: {
       opacity: 0,
@@ -73,19 +72,23 @@ const ServiceCard = ({
         transition: { type: "spring", stiffness: 400, damping: 25 },
       }}
       className={`
-        relative rounded-2xl p-6 bg-gradient-to-br ${currentGradient}
-        text-white shadow-xl hover:shadow-2xl
-        border border-white/10
+        relative rounded-2xl p-6 bg-[#F0F9FF]
+        text-gray-900  hover:shadow-2xl
+        border border-orange-600/50
         overflow-hidden
         backdrop-blur-lg
         cursor-pointer
         group
         will-change-transform
         font-sans
+        h-full w-full
+        
+     
+        shadow-[0_10px_15px_-3px_rgba(255,100,0,0.2),0_4px_6px_-2px_rgba(255,100,0,0.1)] 
+       
       `}
     >
-      {/* Simplified background effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-blue-50/70 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
 
       {/* Icon */}
       <motion.div
@@ -96,7 +99,7 @@ const ServiceCard = ({
           duration: 0.4,
           ease: "easeOut",
         }}
-        className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm mb-4 group-hover:bg-white/30 transition-colors duration-300"
+        className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-200 backdrop-blur-sm mb-4 transition-colors duration-300"
       >
         {icon}
       </motion.div>
@@ -106,7 +109,7 @@ const ServiceCard = ({
         initial={{ opacity: 0, y: 10 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ delay: 0.3 + index * 0.05, duration: 0.4 }}
-        className="text-lg font-bold leading-tight mb-3"
+        className="text-lg font-bold leading-tight mb-3 text-black"
       >
         {title}
       </motion.h3>
@@ -116,7 +119,7 @@ const ServiceCard = ({
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: 0.4 + index * 0.05, duration: 0.4 }}
-        className="text-white/90 text-sm leading-relaxed mb-4"
+        className="text-black text-xs leading-relaxed mb-4"
       >
         {description}
       </motion.p>
@@ -132,9 +135,9 @@ const ServiceCard = ({
               delay: 0.5 + index * 0.05 + featureIndex * 0.05,
               duration: 0.3,
             }}
-            className="flex items-start space-x-2 text-white/90 text-sm"
+            className="flex items-start space-x-2 text-black text-sm"
           >
-            <CheckCircle className="w-4 h-4 text-green-300 shrink-0 mt-0.5" />
+            <CheckCircle className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
             <span>{feature}</span>
           </motion.div>
         ))}
@@ -142,7 +145,7 @@ const ServiceCard = ({
 
       {/* Extra info */}
       {isService && (
-        <div className="mb-4 pt-7 text-xs text-white/90 border-t border-white/50 space-y-3">
+        <div className="mb-4 pt-7 text-xs text-black border-t border-black/50 space-y-3">
           {Object.entries(extraInfo).map(([key, value], extraIndex) => (
             <motion.div
               key={key}
@@ -155,7 +158,7 @@ const ServiceCard = ({
               className="flex justify-between"
             >
               <div className="flex gap-1">
-                <CheckCircle className="w-4 h-4 text-green-300 shrink-0 mt-0.5" />
+                <CheckCircle className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                 {key.charAt(0).toUpperCase() + key.slice(1)}
               </div>
               <div>{value}</div>
@@ -171,18 +174,14 @@ const ServiceCard = ({
         transition={{ delay: 0.7 + index * 0.05, duration: 0.4 }}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full group/btn relative overflow-hidden px-4 py-2.5 text-sm font-semibold rounded-xl 
-                   bg-white/20 backdrop-blur-sm border border-white/30 
-                   hover:bg-white/30 hover:border-white/50 
-                   text-white transition-all duration-300
-                   shadow-lg hover:shadow-xl"
+        className="w-full group/btn relative overflow-hidden px-4 py-2.5 text-xs self-baseline font-semibold rounded-xl 
+                                 bg-blue-100/50 backdrop-blur-sm border border-blue-200
+                                 hover:bg-blue-200 hover:border-blue-300 
+                                 text-gray-900 transition-all duration-300
+                                 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
       >
         <Link
-          href={`${
-            isService
-              ? "contact"
-              : `services/${link}` 
-          }`}
+          href={`${isService ? "contact" : `services/${link}`}`}
           className="relative z-10 flex items-center justify-center gap-2"
         >
           {isService ? "Get Qoute" : "Learn More"}

@@ -1,7 +1,7 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+"use client";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const AboutUsSection = () => {
   // Animation variants
@@ -11,9 +11,9 @@ const AboutUsSection = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const slideInLeft = {
@@ -23,9 +23,9 @@ const AboutUsSection = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const slideInRight = {
@@ -35,9 +35,9 @@ const AboutUsSection = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const floatAnimation = {
@@ -45,47 +45,45 @@ const AboutUsSection = () => {
     transition: {
       duration: 6,
       repeat: Infinity,
-      ease: "easeInOut"
-    }
+      ease: "easeInOut",
+    },
   };
 
   const scaleOnHover = {
     rotate: 4,
-    transition: { duration: 0.3 }
+    transition: { duration: 0.3 },
   };
 
   const buttonHover = {
     scale: 1.05,
     y: -2,
-    transition: { duration: 0.2 }
+    transition: { duration: 0.2 },
   };
 
   return (
-    <section className="min-h-screen bg-white flex items-center relative overflow-hidden pt-5 font-sans">
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen max-w-7xl mx-auto flex items-center justify-center relative overflow-hidden  font-sans">
+      <div className="">
         <motion.div
           className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          
           {/* Content Section */}
           <motion.div variants={slideInLeft}>
-       <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-3">
               <motion.div
                 className="w-3 h-3 bg-[#1c398e] rounded-full"
                 initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
+                animate={{
                   scale: [1, 1.3, 1],
-                  opacity: [1, 0.7, 1]
+                  opacity: [1, 0.7, 1],
                 }}
-                transition={{ 
+                transition={{
                   delay: 0.3,
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               />
               <motion.div
@@ -97,7 +95,7 @@ const AboutUsSection = () => {
                 Leading Academic Publishing Services in Asia
               </motion.div>
             </div>
-            
+
             <motion.h1
               className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 30 }}
@@ -108,27 +106,33 @@ const AboutUsSection = () => {
               <br />
               <span className="text-gray-700">Excellence</span>
             </motion.h1>
-            
+
             <motion.div
               className="text-xl md:text-2xl font-bold text-[#1c398e] mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.9, duration: 0.8, type: "spring", bounce: 0.4 }}
+              transition={{
+                delay: 0.9,
+                duration: 0.8,
+                type: "spring",
+                bounce: 0.4,
+              }}
             >
               Since 1994
             </motion.div>
-            
+
             <motion.p
               className="text-base text-gray-900 mb-6 max-w-lg leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.8 }}
             >
-              With over 30 years of experience and 900+ skilled professionals, we've established ourselves as Asia's 
-              premier academic publishing services provider, trusted by leading STM publishers worldwide to deliver 
-              exceptional quality and innovation.
+              With over 30 years of experience and 900+ skilled professionals,
+              we've established ourselves as Asia's premier academic publishing
+              services provider, trusted by leading STM publishers worldwide to
+              deliver exceptional quality and innovation.
             </motion.p>
-            
+
             <motion.div
               className="flex flex-wrap gap-3"
               initial={{ opacity: 0, y: 20 }}
@@ -155,28 +159,24 @@ const AboutUsSection = () => {
           </motion.div>
 
           {/* Image Section */}
-          <motion.div
-            className="relative"
-            variants={slideInRight}
-          >
+          <motion.div className="relative" variants={slideInRight}>
             <div className="relative">
               {/* Main Image Container with Clipping */}
               <div className="relative w-full h-[450px] lg:h-[550px]">
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl shadow-2xl"
-                //   animate={{
-                //     rotate: [3, 5, 3],
-                //   }}
-                //   transition={{
-                //     duration: 8,
-                //     repeat: Infinity,
-                //     ease: "easeInOut"
-                //   }}
+                  //   animate={{
+                  //     rotate: [3, 5, 3],
+                  //   }}
+                  //   transition={{
+                  //     duration: 8,
+                  //     repeat: Infinity,
+                  //     ease: "easeInOut"
+                  //   }}
                 />
-                
+
                 <motion.div
                   className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl"
-                 
                   whileHover={scaleOnHover}
                 >
                   <Image
@@ -190,7 +190,6 @@ const AboutUsSection = () => {
               </div>
             </div>
           </motion.div>
-          
         </motion.div>
       </div>
     </section>

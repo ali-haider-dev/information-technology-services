@@ -176,7 +176,7 @@ const ContactSection = () => {
 
   return (
     <>
-      <section className="relative max-w-7xl  py-30 pt-20 sm:pt-40 md:pt-15 lg:pt-20 px-18 bg-gradient-to-br from-gray-50 via-white to-[#1c398e]/5 overflow-hidden font-sans">
+      <section className="relative max-w-8xl  py-30 pt-20 sm:pt-40 md:pt-15 lg:pt-20 px-18 bg-gradient-to-br from-gray-50 via-white to-[#1c398e]/5 overflow-hidden font-sans">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#1c398e]/3 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-[#1c398e]/5 to-transparent rounded-full blur-2xl"></div>
 

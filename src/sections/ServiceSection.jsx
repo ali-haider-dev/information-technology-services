@@ -23,7 +23,7 @@ const AnimatedLottie = dynamic(() => import("lottie-react"), {
 
 const services = [
   {
-    icon: <Globe className="w-5 h-5 text-white" />,
+    icon: <Globe className="w-5 h-5 text-black" />,
     title: "Management ERP Systems",
       link:"managementerpsystems",
     description:
@@ -36,7 +36,7 @@ const services = [
     extraInfo: {turnaround:"Custom deployment", expertise:"Cloud-based SAAS platform" },
   },
   {
-    icon: <ShoppingCart className="w-5 h-5 text-white" />,
+    icon: <ShoppingCart className="w-5 h-5 text-black" />,
     title: "E-Commerce & Payment Gateways",
       link:"e-commerce&paymentgateways",
     description:
@@ -49,7 +49,7 @@ const services = [
     extraInfo:{turnaround:"Instant activation", expertise:"50+ payment methods" },
   },
   {
-    icon: <Lock className="w-5 h-5 text-white" />,
+    icon: <Lock className="w-5 h-5 text-black" />,
     title: "Content Delivery & Access Control",
       link:"contentdelivery&accesscontrol",
     description:
@@ -62,7 +62,7 @@ const services = [
     extraInfo:{turnaround:"Real-time deployment", expertise:"99.9% uptime guarantee" },
   },
   {
-    icon: <Edit3 className="w-5 h-5 text-white" />,
+    icon: <Edit3 className="w-5 h-5 text-black" />,
     title: "AI-Powered Copy Editing",
     link:"aicopyeditingplatform",
     description:
@@ -76,7 +76,7 @@ const services = [
 
   },
   {
-    icon: <FileCode className="w-5 h-5 text-white" />,
+    icon: <FileCode className="w-5 h-5 text-black" />,
     title: "Automated Typesetting & XML",
       link:"automatedtypesetting&xml",
     description:
@@ -90,7 +90,7 @@ const services = [
 
   },
   {
-    icon: <Search className="w-5 h-5 text-white" />,
+    icon: <Search className="w-5 h-5 text-black" />,
     title: "Automated Reference Verification",
       link:"intelligentreferenceverification",
     description:
@@ -104,7 +104,7 @@ const services = [
 
   },
   {
-    icon: <Shield className="w-5 h-5 text-white" />,
+    icon: <Shield className="w-5 h-5 text-black" />,
     title: "Advanced AI Detection Platform",
       link:"aiplagiarismdetection",
     description:
@@ -118,7 +118,7 @@ const services = [
 
   },
   {
-    icon: <Image className="w-5 h-5 text-white" />,
+    icon: <Image className="w-5 h-5 text-black" />,
     title: "AI-Enhanced Figure Processing",
       link:"automatedfigureenhancement",
     description:
@@ -132,7 +132,7 @@ const services = [
 
   },
   {
-    icon: <FileText className="w-5 h-5 text-white" />,
+    icon: <FileText className="w-5 h-5 text-black" />,
     title: "Manuscript Processing Platform",
       link:"proprietarymanuscriptplatform",
     description:
@@ -151,17 +151,16 @@ export default function ServiceSection({isService}) {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, {
     threshold: 0.3,
-    once: true, // Changed to true for better performance
+    once: true, 
   });
 
   return (
     <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-white py-20 px-18 font-sans">
       {/* Simplified background blobs */}
-      {/* <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
     
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-gradient-to-r from-pink-400/20 to-yellow-500/20 rounded-full blur-3xl"></div> */}
+        
       {/* Content container */}
       <div
         className="relative max-w-7xl w-full mx-12 z-10 flex flex-col lg:flex-row items-center lg:items-start gap-12"
@@ -203,7 +202,7 @@ export default function ServiceSection({isService}) {
               headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
             }
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="mt-6 text-gray-600 text-md max-w-lg mx-auto lg:mx-0 leading-relaxed"
+            className="mt-6 text-gray-600 text-md  mx-auto lg:mx-0 leading-relaxed"
           >
             All our services are powered by cutting-edge proprietary software
             platforms developed in-house. From AI-driven manuscript processing

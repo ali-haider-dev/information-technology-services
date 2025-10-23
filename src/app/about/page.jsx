@@ -51,10 +51,10 @@ export const metadata = {
 const AboutUsPage = () => {
   return (
     <>
-      <section className="pt-28 lg:pt-2 bg-white h-full">
+      <section className="max-w-8xl mx-auto pt-28 lg:pt-2 bg-white h-full">
         <AboutUsSection />
       </section>
-      <HomeStatsCards />
+      {/* <HomeStatsCards /> */}
       <OurStory />
       <CoreValues />
       <LeadershipTeam />

@@ -26,9 +26,9 @@ const GetInTouchSection = dynamic(() => import("../../components/GetInTouch"), {
 const page = () => {
   return (
     <>
-      <section className="pt-12">
+   
         <ServiceSection isService />
-      </section>
+
 
       <TechnologyProcessSection />
 

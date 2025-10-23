@@ -63,7 +63,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full px-18 pt-40 md:pt-24  lg:px-20  bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
+    <section className="relative w-full px-18 pt-5 md:pt-0  lg:px-20  bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#1c398e]/5 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-[#1c398e]/3 to-transparent rounded-full blur-2xl"></div>

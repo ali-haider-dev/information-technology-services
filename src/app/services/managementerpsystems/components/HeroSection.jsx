@@ -90,7 +90,7 @@ const ANIMATION_VARIANTS = {
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full px-6 pt-40 md:pt-24 lg:px-20 bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
+    <section className="relative w-full px-18 pt-5 md:pt-0  lg:px-20 bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden font-sans">
       {/* Optimized background - use pseudo-elements instead of extra divs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#1c398e]/5 to-transparent rounded-full blur-3xl" />
