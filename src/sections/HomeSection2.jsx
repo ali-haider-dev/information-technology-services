@@ -47,7 +47,7 @@ const HomeHeroSection = () => {
               Empowering Global Technology Excellence
             </h1>
             <p className="text-sm md:text-lg text-white leading-relaxed max-w-2xl mx-auto mb-8">
-              {" "}
+        
               {/* Added mb-8 for spacing */}
               With 900+ skilled professionals, we deliver world-class,
               tech-enabled solutions and comprehensive SaaS platforms to

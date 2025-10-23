@@ -1,8 +1,7 @@
-import HomeHeroSection from "../sections/HomeSection2";
-import HomeStatsCards from "../components/HomeStatsCards";
 import dynamic from "next/dynamic";
+import HeroSection from "../sections/HomeHeroSection";
 
-const ServiceSection = dynamic(() => import("../sections/ServiceSection"), {
+const ServiceSection = dynamic(() => import("../sections/HomeServiceSection"), {
   loading: () => null,
 });
 
@@ -55,9 +54,9 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <HomeHeroSection />
-
-      <HomeStatsCards />
+      {/* <HomeHeroSection /> */}
+      <HeroSection />
+      {/* <HomeStatsCards /> */}
       <section className="max-w-7xl mx-auto">
         <ServiceSection />
       </section>
