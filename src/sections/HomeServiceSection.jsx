@@ -19,7 +19,7 @@ import ServiceCard from "../components/HomeServiceCard";
 
 const services = [
   {
-    icon: <Globe className="w-5 h-5 text-white" />,
+    icon: <Globe className="w-5 h-5 text-black" />,
     title: "Management ERP Systems",
     link: "managementerpsystems",
     description:
@@ -35,7 +35,7 @@ const services = [
     },
   },
   {
-    icon: <ShoppingCart className="w-5 h-5 text-white" />,
+    icon: <ShoppingCart className="w-5 h-5 text-black" />,
     title: "E-Commerce & Payment Gateways",
     link: "e-commerce&paymentgateways",
     description:
@@ -51,7 +51,7 @@ const services = [
     },
   },
   {
-    icon: <Lock className="w-5 h-5 text-white" />,
+    icon: <Lock className="w-5 h-5 text-black" />,
     title: "Content Delivery & Access Control",
     link: "contentdelivery&accesscontrol",
     description:
@@ -67,7 +67,7 @@ const services = [
     },
   },
   {
-    icon: <Edit3 className="w-5 h-5 text-white" />,
+    icon: <Edit3 className="w-5 h-5 text-black" />,
     title: "AI-Powered Copy Editing",
     link: "aicopyeditingplatform",
     description:
@@ -80,7 +80,7 @@ const services = [
     extraInfo: { turnaround: "24-48 hours", expertise: "AI-powered platform" },
   },
   {
-    icon: <FileCode className="w-5 h-5 text-white" />,
+    icon: <FileCode className="w-5 h-5 text-black" />,
     title: "Automated Typesetting & XML",
     link: "automatedtypesetting&xml",
     description:
@@ -93,7 +93,7 @@ const services = [
     extraInfo: { turnaround: "1-2 days", expertise: "Proprietary AI engine" },
   },
   {
-    icon: <Search className="w-5 h-5 text-white" />,
+    icon: <Search className="w-5 h-5 text-black" />,
     title: "Automated Reference Verification",
     link: "intelligentreferenceverification",
     description:
@@ -109,7 +109,7 @@ const services = [
     },
   },
   {
-    icon: <Shield className="w-5 h-5 text-white" />,
+    icon: <Shield className="w-5 h-5 text-black" />,
     title: "Advanced AI Detection Platform",
     link: "aiplagiarismdetection",
     description:
@@ -125,7 +125,7 @@ const services = [
     },
   },
   {
-    icon: <Image className="w-5 h-5 text-white" />,
+    icon: <Image className="w-5 h-5 text-black" />,
     title: "AI-Enhanced Figure Processing",
     link: "automatedfigureenhancement",
     description:
@@ -138,7 +138,7 @@ const services = [
     extraInfo: { turnaround: "1-2 days", expertise: "Computer vision A" },
   },
   {
-    icon: <FileText className="w-5 h-5 text-white" />,
+    icon: <FileText className="w-5 h-5 text-black" />,
     title: "Manuscript Processing Platform",
     link: "proprietarymanuscriptplatform",
     description:
