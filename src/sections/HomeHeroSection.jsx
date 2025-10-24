@@ -60,9 +60,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pb-0 px-16 font-sans">
-   
-
+    <section className="relative overflow-hidden bg-white pb-0 px-4 sm:px-8 lg:px-16 font-sans">
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           variants={containerVariants}
@@ -99,9 +97,9 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
             <motion.div variants={itemVariants} className="space-y-4 max-w-3xl">
-              <h1 className="text-4xl sm:text-3xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
                 Empowering Global{" "}
-                <span className="bg-gradient-to-r from-blue-700 via-purple-700 to-cyan-700 bg-clip-text text-transparent relative">
+                <span className="bg-gradient-to-r from-blue-700 via-purple-700 to-cyan-700 bg-clip-text text-transparent relative inline-block">
                   Technology Excellence
                   <motion.div
                     animate={{
@@ -129,7 +127,7 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="col-span-7 flex flex-wrap gap-x-3 sm:gap-x-4 gap-y-2 leading-none justify-start"
+            className="col-span-12 md:col-span-7 flex flex-wrap gap-x-5 sm:gap-x-4 gap-y-4 leading-none justify-start"
           >
             {services.map((service, index) => (
               <motion.div
@@ -143,23 +141,15 @@ export default function HeroSection() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/30 rounded-full border-2 border-blue-200/60 shadow-md shadow-blue-100/50 backdrop-blur-sm cursor-pointer hover:border-purple-300/70 transition-all group"
+                className="h-10 inline-flex items-center gap-2 px-3 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/30 rounded-full border-2 border-blue-200/60 shadow-md shadow-blue-100/50 backdrop-blur-sm cursor-pointer hover:border-purple-300/70 transition-all group"
               >
-                <motion.div
-                 
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="group-hover:animate-none"
-                >
+                <motion.div className="group-hover:animate-none flex-shrink-0">
                   {React.cloneElement(service.icon, {
                     className:
-                      "w-5 h-5 text-blue-600 group-hover:text-purple-600 transition-colors",
+                      "w-4 h-4 text-blue-600 group-hover:text-purple-600 transition-colors",
                   })}
                 </motion.div>
-                <span className="text-xs font-bold text-blue-700 group-hover:text-purple-700 transition-colors">
+                <span className="text-xs font-bold text-blue-700 group-hover:text-purple-700 transition-colors whitespace-nowrap">
                   {service.name}
                 </span>
               </motion.div>
@@ -172,7 +162,7 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="col-span-5 flex justify-center max-w-xl border-l-2 pl-6 border-blue-200/60 relative group"
+            className="col-span-12 md:col-span-5 flex justify-start md:justify-center max-w-xl md:border-l-2 md:pl-6 border-blue-200/60 relative group mt-4 md:mt-0"
           >
             <motion.div
               animate={{
@@ -183,11 +173,11 @@ export default function HeroSection() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-cyan-400"
+              className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-cyan-400 hidden md:block"
             />
 
             {/* Floating particles on the right side */}
-            <div className="absolute -right-8 top-0 bottom-0 w-32 pointer-events-none">
+            <div className="absolute -right-8 top-0 bottom-0 w-32 pointer-events-none hidden lg:block">
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -243,9 +233,9 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true , amount: 0.2}}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="col-span-8 relative h-80 sm:h-56 min-h-96 rounded-2xl group"
+              className="col-span-12 md:col-span-9 relative h-80 sm:h-96 rounded-2xl group"
             >
               <motion.div
                 animate={{
@@ -258,33 +248,30 @@ export default function HeroSection() {
                 }}
                 className="w-full h-full rounded-2xl relative overflow-hidden"
               >
-              
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6 }}
                   className="w-full h-full relative"
                 >
                   <img
-                    src="homehero.jpg"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                     alt="Construction team collaborating"
                     className="w-full h-full object-cover rounded-lg"
                   />
-                 
                 </motion.div>
-             
               </motion.div>
-                  <Sparkles className="w-8 h-8 text-[#1c398e] absolute left-0 bottom-8 " />
-                  <Sparkles className="w-5 h-5 text-[#1c398e] absolute -left-6 bottom-14 " />
-                  <Sparkles className="w-3 h-3 text-[#1c398e] absolute -left-2 bottom-2 " />
+              <Sparkles className="w-8 h-8 text-[#1c398e] absolute left-0 bottom-8" />
+              <Sparkles className="w-5 h-5 text-[#1c398e] absolute -left-6 bottom-14" />
+              <Sparkles className="w-3 h-3 text-[#1c398e] absolute -left-2 bottom-2" />
             </motion.div>
 
             {/* Right Stats Box */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-                 viewport={{ once: true , amount: 0.2}}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="col-span-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 px-4 flex flex-col justify-center rounded-lg relative overflow-hidden"
+              className="col-span-12 md:col-span-3 p-6 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 flex flex-col justify-center rounded-lg relative overflow-hidden min-h-[320px]"
             >
               {/* Animated gradient overlay */}
               <motion.div
@@ -368,7 +355,7 @@ export default function HeroSection() {
                               repeat: Infinity,
                               delay: index * 0.2,
                             }}
-                            className="w-2.5 h-2.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 rounded-full shadow-lg shadow-purple-500/50"
+                            className="w-2.5 h-2.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 rounded-full shadow-lg shadow-purple-500/50 flex-shrink-0"
                           />
                           <motion.p
                             animate={
@@ -386,7 +373,7 @@ export default function HeroSection() {
                               duration: 2,
                               repeat: Infinity,
                             }}
-                            className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent"
+                            className="text-lg font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent"
                             style={{
                               backgroundSize: "200% auto",
                             }}
@@ -394,7 +381,7 @@ export default function HeroSection() {
                             {stat.number}
                           </motion.p>
                         </div>
-                        <p className="text-white/90 text-sm sm:text-base ml-5 relative z-10">
+                        <p className="text-white/90 text-xs ml-5 relative z-10">
                           {stat.label}
                         </p>
                       </motion.div>
