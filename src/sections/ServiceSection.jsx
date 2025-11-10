@@ -155,7 +155,7 @@ export default function ServiceSection({isService}) {
   });
 
   return (
-    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-white py-20 px-18 font-sans">
+    <section className="relative   flex flex-col justify-center items-center overflow-hidden bg-white py-20 px-6 md:px-18 font-sans">
       {/* Simplified background blobs */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
       <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
