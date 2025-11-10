@@ -214,10 +214,10 @@ export default function ServiceSection({ isService }) {
 
 
   return (
-    <section className="relative -mt-14 flex px-16 md:px-0 flex-col justify-center items-center overflow-hidden bg-white py-20 font-sans">
+    <section className="relative -mt-14 flex  md:px-0 flex-col justify-center items-center overflow-hidden bg-white py-20 font-sans">
      
       <div
-        className="relative max-w-7xl w-full mx-auto px-6 md:px-16  z-10 flex items-center justify-between" 
+        className="relative max-w-7xl w-full  px-6 md:px-16  z-10 flex items-center justify-between" 
         ref={headerRef}
       >
         <motion.div
