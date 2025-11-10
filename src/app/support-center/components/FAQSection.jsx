@@ -118,7 +118,7 @@ const FAQPage = () => {
                     <motion.div
                       initial={{ x: -10 }}
                       animate={{ x: 0 }}
-                      className="pb-6 pl-14 pr-4"
+                      className="md:pb-6 md:pl-14 md:pr-4 "
                     >
                       <div className="bg-gradient-to-r from-blue-50 to-transparent p-4 rounded-lg border-l-4 border-[#1c398e]">
                         <p className="text-gray-700 leading-relaxed">

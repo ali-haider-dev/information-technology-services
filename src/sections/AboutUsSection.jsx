@@ -61,7 +61,7 @@ const AboutUsSection = () => {
   };
 
   return (
-    <section className="min-h-screen max-w-7xl mx-auto flex items-center justify-center relative overflow-hidden  font-sans">
+    <section className="min-h-screen max-w-7xl mx-auto px-6 flex items-center justify-center relative overflow-hidden  font-sans">
       <div className="">
         <motion.div
           className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"

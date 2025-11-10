@@ -54,7 +54,7 @@ const cardVariants = {
 
 const PlatformFeatures = ({ title, modules=[],size,green }) => {
   return (
-    <section className="w-full px-18 py-20 lg:py-24 bg-white font-sans">
+    <section className="w-full px-6 md:px-18 py-20 lg:py-24 bg-white font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
