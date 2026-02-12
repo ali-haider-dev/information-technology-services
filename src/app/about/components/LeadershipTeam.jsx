@@ -90,7 +90,7 @@ const LeadershipTeam = () => {
           </p>
         </motion.div>
         <div className="absolute top-10 right-10 w-10 h-10  rounded-full blur-xl transform translate-x-6 -translate-y-6 animate-bounce bg-[#1c398e]"></div>
-        <div className="absolute top-10 right-ledt w-10 h-10  rounded-full blur-xl transform translate-x-6 -translate-y-6 animate-bounce bg-[#1c398e]"></div>
+        <div className="absolute top-10 right-left w-10 h-10  rounded-full blur-xl transform translate-x-6 -translate-y-6 animate-bounce bg-[#1c398e]"></div>
         <div className="absolute -bottom-20 -left-15 w-10 h-10  rounded-full blur-xl transform translate-x-6 -translate-y-6 animate-bounce bg-[#1c398e]"></div>
         {/* Leadership Cards */}
         <motion.div
@@ -109,7 +109,7 @@ const LeadershipTeam = () => {
                 scale: 1.03,
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
-              className="group relative bg-white rounded-2xl border-2 border-gray-100 p-6 hover:shadow-2xl hover:border-gray-200 transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative bg-white rounded-2xl border-2 border-gray-100 p-6 hover:shadow-lg hover:border-gray-200 transition-all duration-300 cursor-pointer overflow-hidden"
             >
               {/* Card background decoration */}
               {/* <div className="absolute bottom-0 left-0 w-3 h-3 bg-blue-500/40 rounded-full animate-ping"></div> 
